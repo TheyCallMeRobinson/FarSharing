@@ -1,0 +1,1 @@
+All docs and tech information about this project is located in Docs package
