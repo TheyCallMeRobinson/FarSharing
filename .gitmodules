@@ -1,0 +1,3 @@
+[submodule "Farsharing_Server"]
+	path = Farsharing_Server
+	url = https://github.com/StudentCSF/Farsharing_Server
