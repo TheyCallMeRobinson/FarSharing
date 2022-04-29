@@ -13,4 +13,9 @@
     <string name="registerPasswordHint">Пароль</string>
     <string name="confirmEmail">Подтверждение почты</string>
     <string name="code">Код</string>
+    <string name="submit">Подтвердить</string>
+    <string name="paymentRequisites">Реквизиты для оплаты</string>
+    <string name="cardNumber">Номер карты</string>
+    <string name="validThru">Действует до</string>
+    <string name="cvv_cvc">CVV/CVC</string>
 </resources>
