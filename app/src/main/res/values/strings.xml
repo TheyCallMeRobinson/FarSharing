@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">FarSharing</string>
+    <string name="welcome">Добро пожаловать в FarSharing</string>
+    <string name="login">Вход</string>
+    <string name="register">Регистрация</string>
+    <string name="emailFieldHint">Email</string>
+    <string name="next">Далее</string>
+    <string name="passwordFieldHint">Пароль</string>
+    <string name="registerNameHint">ФИО</string>
+    <string name="registerBirthdateHint">Дата рождения</string>
+    <string name="registerLicenseNumberHint">Номер водительских прав</string>
+    <string name="registerEmailHint">Email</string>
+    <string name="registerPasswordHint">Пароль</string>
+    <string name="confirmEmail">Подтверждение почты</string>
+    <string name="code">Код</string>
+</resources>
