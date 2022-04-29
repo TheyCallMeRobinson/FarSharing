@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewApp">
         <activity
+            android:name=".AutoDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".PaymentActivity"
             android:exported="false" />
         <activity
