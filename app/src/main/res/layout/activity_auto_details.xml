@@ -6,4 +6,133 @@
     android:layout_height="match_parent"
     tools:context=".AutoDetailsActivity">
 
+    <TextView
+        android:id="@+id/chosenAutoHeaderText"
+        style="@style/Text.TextView"
+        android:layout_marginTop="40dp"
+        android:text="@string/chosenAuto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/brand"
+        style="@style/Text.OutputTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/chosenAutoHeaderText" />
+
+    <TextView
+        android:id="@+id/model"
+        style="@style/Text.OutputTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/brand" />
+
+    <TextView
+        android:id="@+id/bodyType"
+        style="@style/Text.OutputTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/model" />
+
+    <TextView
+        android:id="@+id/color"
+        style="@style/Text.OutputTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bodyType" />
+
+    <TextView
+        android:id="@+id/address"
+        style="@style/Text.OutputTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/color" />
+
+    <TextView
+        android:id="@+id/pricePerHour"
+        style="@style/Text.OutputTextView"
+        android:layout_width="wrap_content"
+        android:minWidth="80dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address" />
+
+    <TextView
+        android:id="@+id/total"
+        style="@style/Text.OutputTextView"
+        android:layout_width="wrap_content"
+        android:minWidth="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pricePerHour" />
+
+    <TextView
+        android:id="@+id/textView16"
+        style="@style/Text.HintTextView"
+        android:text="@string/brand"
+        app:layout_constraintBottom_toTopOf="@+id/brand"
+        app:layout_constraintStart_toStartOf="@+id/brand" />
+
+    <TextView
+        android:id="@+id/textView17"
+        style="@style/Text.HintTextView"
+        android:text="@string/model"
+        app:layout_constraintBottom_toTopOf="@+id/model"
+        app:layout_constraintStart_toStartOf="@+id/model" />
+
+    <TextView
+        android:id="@+id/textView18"
+        style="@style/Text.HintTextView"
+        android:text="@string/bodyType"
+        app:layout_constraintBottom_toTopOf="@+id/bodyType"
+        app:layout_constraintStart_toStartOf="@+id/bodyType" />
+
+    <TextView
+        android:id="@+id/textView19"
+        style="@style/Text.HintTextView"
+        android:text="@string/carColor"
+        app:layout_constraintBottom_toTopOf="@+id/color"
+        app:layout_constraintStart_toStartOf="@+id/color" />
+
+    <TextView
+        android:id="@+id/textView20"
+        style="@style/Text.HintTextView"
+        android:text="@string/parkingAddress"
+        app:layout_constraintBottom_toTopOf="@+id/address"
+        app:layout_constraintStart_toStartOf="@+id/address" />
+
+    <TextView
+        android:id="@+id/textView21"
+        style="@style/Text.HintTextView"
+        android:text="@string/costPerHour"
+        app:layout_constraintBottom_toTopOf="@+id/pricePerHour"
+        app:layout_constraintStart_toStartOf="@+id/pricePerHour" />
+
+    <TextView
+        android:id="@+id/textView22"
+        style="@style/Text.HintTextView"
+        android:text="@string/rentForHours"
+        app:layout_constraintBottom_toTopOf="@+id/rentForHours"
+        app:layout_constraintStart_toStartOf="@+id/rentForHours" />
+
+    <TextView
+        android:id="@+id/rentForHours"
+        style="@style/Text.OutputTextView"
+        android:layout_width="wrap_content"
+        android:minWidth="80dp"
+        android:layout_marginEnd="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address" />
+
+    <Button
+        android:id="@+id/confirmChoise"
+        style="@style/Button.Scroll"
+        android:text="@string/submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/total" />
 </androidx.constraintlayout.widget.ConstraintLayout>

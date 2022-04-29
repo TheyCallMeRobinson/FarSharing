@@ -18,4 +18,12 @@
     <string name="cardNumber">Номер карты</string>
     <string name="validThru">Действует до</string>
     <string name="cvv_cvc">CVV/CVC</string>
+    <string name="chosenAuto">Выбранный Вами авто:</string>
+    <string name="brand">Бренд</string>
+    <string name="model">Модель</string>
+    <string name="parkingAddress">Адрес парковки</string>
+    <string name="costPerHour">Цена в час, р.</string>
+    <string name="rentForHours">Аренда на, ч.</string>
+    <string name="carColor">Цвет</string>
+    <string name="bodyType">Тип кузова</string>
 </resources>
