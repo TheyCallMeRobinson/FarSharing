@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewApp">
         <activity
-            android:name=".AutoListActivity"
-            android:exported="false" />
-        <activity
             android:name=".AutoDetailsActivity"
             android:exported="false" />
         <activity
@@ -20,7 +17,12 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ConfirmEmailActivity"
             android:exported="false" />
@@ -32,12 +34,7 @@
             android:exported="false" />
         <activity
             android:name=".WelcomeActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
 
         <meta-data

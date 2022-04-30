@@ -27,4 +27,5 @@
     <string name="carColor">Цвет</string>
     <string name="bodyType">Тип кузова</string>
     <string name="helloWorld">Привет, Мир!</string>
+    <string name="cars">Автомобили</string>
 </resources>

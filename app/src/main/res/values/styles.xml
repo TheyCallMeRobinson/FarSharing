@@ -71,4 +71,11 @@
         <item name="android:layout_marginStart">0dp</item>
     </style>
 
+    <style name="CarListItem">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
 </resources>
