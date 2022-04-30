@@ -14,4 +14,4 @@ Simple carsharing app
 
 [Trello](https://trello.com/b/7aW0h69f/carsharing-mvp)
 
-[Swagger](https://app.swaggerhub.com/apis/TheyCallMeRobinson/FarSharing/1.0.0)
+[Swagger](http://farsharing-server.herokuapp.com/swagger-ui/index.html)
