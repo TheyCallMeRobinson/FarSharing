@@ -26,11 +26,11 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private void setUpListeners() {
         login.setOnClickListener(v -> {
-                Intent toLogin = new Intent(WelcomeActivity.this, ru.vsu.cs.farsharing.LoginActivity.class);
+                Intent toLogin = new Intent(WelcomeActivity.this, AutoDetailsActivity.class);
                 startActivity(toLogin);
         });
         register.setOnClickListener(v -> {
-                Intent toRegister = new Intent(WelcomeActivity.this, ru.vsu.cs.farsharing.RegisterActivity.class);
+                Intent toRegister = new Intent(WelcomeActivity.this, RegisterActivity.class);
                 startActivity(toRegister);
         });
     }

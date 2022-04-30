@@ -26,4 +26,5 @@
     <string name="rentForHours">Аренда на, ч.</string>
     <string name="carColor">Цвет</string>
     <string name="bodyType">Тип кузова</string>
+    <string name="helloWorld">Привет, Мир!</string>
 </resources>
