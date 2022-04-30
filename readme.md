@@ -17,3 +17,5 @@ Simple carsharing app
 [Trello](https://trello.com/b/7aW0h69f/carsharing-mvp)
 
 [Swagger](http://farsharing-server.herokuapp.com/swagger-ui/index.html)
+
+[Reserve link to API documentation on SwaggerHub](https://app.swaggerhub.com/apis/StudentCSF/farsharing_open-api_definition/v2)
