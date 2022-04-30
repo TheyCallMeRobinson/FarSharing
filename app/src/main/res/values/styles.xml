@@ -24,7 +24,7 @@
     </style>
 
     <style name="Text">
-        <item name="android:fontFamily">@font/montserrat_alternates</item>
+        <item name="android:fontFamily">@font/telex</item>
     </style>
 
     <style name="Text.Shadow">
