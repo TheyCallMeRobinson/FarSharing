@@ -8,6 +8,7 @@ Simple carsharing app
 
 ## Documentation
 [Technical specification](https://github.com/TheyCallMeRobinson/FarSharing/blob/master/Docs/%D0%A2%D0%97.pdf)
+
 [Course project](https://github.com/TheyCallMeRobinson/FarSharing/blob/master/Docs/Курсовой%20проект%20.pdf)
 
 ## Links
