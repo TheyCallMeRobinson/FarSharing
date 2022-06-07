@@ -1,8 +1,10 @@
-package ru.vsu.cs.farsharing;
+package ru.vsu.cs.farsharing.activity;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import ru.vsu.cs.farsharing.R;
 
 public class PaymentActivity extends AppCompatActivity {
 

@@ -1,10 +1,12 @@
-package ru.vsu.cs.farsharing;
+package ru.vsu.cs.farsharing.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import ru.vsu.cs.farsharing.R;
 
 public class WelcomeActivity extends AppCompatActivity {
 
@@ -26,7 +28,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private void setUpListeners() {
         login.setOnClickListener(v -> {
-                Intent toLogin = new Intent(WelcomeActivity.this, AutoDetailsActivity.class);
+                Intent toLogin = new Intent(WelcomeActivity.this, CarDetailsActivity.class);
                 startActivity(toLogin);
         });
         register.setOnClickListener(v -> {

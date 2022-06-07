@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".activity.LoginActivity">
 
     <Button
         android:id="@+id/loginNextButton"
@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/loginText"
+        android:id="@+id/bugReportTextView"
         style="@style/Text.TextView"
         android:text="@string/login"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +31,7 @@
         android:hint="@string/emailFieldHint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginText"
+        app:layout_constraintTop_toBottomOf="@+id/bugReportTextView"
         android:autofillHints="username" />
 
     <EditText

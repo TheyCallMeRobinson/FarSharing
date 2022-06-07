@@ -1,4 +1,4 @@
-package ru.vsu.cs.farsharing;
+package ru.vsu.cs.farsharing.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,22 +6,23 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class AutoDetailsActivity extends AppCompatActivity {
+import ru.vsu.cs.farsharing.R;
+
+public class CarDetailsActivity extends AppCompatActivity {
 
     private Button confirmChoice;
-    private TextView brand,
-            model,
-            bodyType,
-            color,
-            address,
-            pricePerHour,
-            rentForHours;
+    private TextView brand;
+    private TextView model;
+    private TextView bodyType;
+    private TextView color;
+    private TextView address;
+    private TextView pricePerHour;
+    private TextView rentForHours;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class AutoDetailsActivity extends AppCompatActivity {
 
     private void setUpListeners() {
         confirmChoice.setOnClickListener(v -> {
-            Intent toLogin = new Intent(AutoDetailsActivity.this, LoginActivity.class);
+            Intent toLogin = new Intent(CarDetailsActivity.this, LoginActivity.class);
             startActivity(toLogin);
         });
     }

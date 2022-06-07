@@ -1,4 +1,4 @@
-package ru.vsu.cs.farsharing;
+package ru.vsu.cs.farsharing.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import ru.vsu.cs.farsharing.R;
 
 public class ConfirmEmailActivity extends AppCompatActivity {
 
@@ -27,7 +29,7 @@ public class ConfirmEmailActivity extends AppCompatActivity {
 
     private void setUpListeners() {
         confirmEmailNextButton.setOnClickListener(v -> {
-            Intent toLogin = new Intent(ConfirmEmailActivity.this, ru.vsu.cs.farsharing.LoginActivity.class);
+            Intent toLogin = new Intent(ConfirmEmailActivity.this, LoginActivity.class);
             startActivity(toLogin);
         });
     }

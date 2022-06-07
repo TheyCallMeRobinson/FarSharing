@@ -4,32 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.WelcomeActivity">
-
-    <Button
-        android:id="@+id/register_button"
-        style="@style/Button.NoScroll"
-        android:layout_marginBottom="18dp"
-        android:text="@string/register"
-        app:layout_constraintBottom_toTopOf="@+id/login_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TextContrastCheck" />
-
-    <Button
-        android:id="@+id/login_button"
-        style="@style/Button.NoScroll"
-        android:text="@string/login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TextContrastCheck" />
+    tools:context=".activity.AreYouSureActivity">
 
     <TextView
-        android:id="@+id/welcome_text"
+        android:id="@+id/loginText"
         style="@style/Text.TextView"
-        android:text="@string/welcome"
+        android:text="Вы уверены, что хотите удалить аккаунт?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/yesButton"
+        style="@style/Button.NoScroll"
+        android:layout_marginTop="80dp"
+        android:text="Да"
+        android:background="@color/danger"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginText" />
+
+    <Button
+        android:id="@+id/noButton"
+        style="@style/Button.NoScroll"
+        android:layout_marginTop="20dp"
+        android:text="Нет"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yesButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

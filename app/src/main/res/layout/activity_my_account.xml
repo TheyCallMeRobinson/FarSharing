@@ -4,29 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.RegisterActivity">
+    tools:context=".activity.MyAccountActivity">
+
+    <TextView
+        android:id="@+id/loginText"
+        style="@style/Text.TextView"
+        android:layout_marginTop="40dp"
+        android:text="Личный кабинет"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginText"
         tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/registerText"
-                style="@style/Text.TextView"
-                android:text="@string/register"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginText">
 
             <EditText
                 android:id="@+id/nameField"
@@ -80,13 +85,37 @@
                 app:layout_constraintTop_toBottomOf="@+id/emailField" />
 
             <Button
-                android:id="@+id/registerNextButton"
+                android:id="@+id/changeAccountButton"
                 style="@style/Button.Scroll"
-                android:text="@string/next"
+                android:layout_marginBottom="0dp"
+                android:text="Редактировать профиль"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="TextContrastCheck" />
+
+            <Button
+                android:id="@+id/deleteAccountButton"
+                style="@style/Button.Scroll"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="0dp"
+                android:text="Удалить профиль"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="TextContrastCheck" />
+
+            <Button
+                android:id="@+id/menuButton"
+                style="@style/Button.Scroll"
+                android:layout_marginTop="20dp"
+                android:text="Меню"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="TextContrastCheck" />
+
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
