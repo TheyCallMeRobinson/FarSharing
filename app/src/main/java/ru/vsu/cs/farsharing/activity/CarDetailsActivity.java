@@ -63,7 +63,6 @@ public class CarDetailsActivity extends AppCompatActivity {
                 "}");
     }
 
-    @SuppressLint("SetTextI18n")
     private void setCarData() {
 //        try {
 //            JSONObject jo = getCarData(1);

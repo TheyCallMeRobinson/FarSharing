@@ -17,7 +17,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/submitPaymentButton"
         style="@style/Button.NoScroll"
         android:text="@string/submit"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,7 +26,7 @@
         tools:ignore="MissingConstraints,TextContrastCheck" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal"
+        android:id="@+id/cardNumberEditText"
         style="@style/Text.EditText"
         android:layout_marginTop="100dp"
         android:ems="10"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/validThruEditText"
         style="@style/Text.EditText"
         android:layout_width="142dp"
         android:layout_marginStart="32dp"
@@ -47,10 +47,10 @@
         android:inputType="date"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+        app:layout_constraintTop_toBottomOf="@+id/cardNumberEditText" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal2"
+        android:id="@+id/cvvEditText"
         style="@style/Text.EditText"
         android:layout_width="90dp"
         android:layout_marginStart="60dp"
@@ -58,6 +58,6 @@
         android:ems="10"
         android:hint="@string/cvv_cvc"
         android:inputType="numberDecimal"
-        app:layout_constraintStart_toEndOf="@+id/editTextDate"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+        app:layout_constraintStart_toEndOf="@+id/validThruEditText"
+        app:layout_constraintTop_toBottomOf="@+id/cardNumberEditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
