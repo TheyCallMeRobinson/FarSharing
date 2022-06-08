@@ -13,6 +13,9 @@ Simple carsharing app
 
 [Presentation](https://github.com/TheyCallMeRobinson/FarSharing/blob/master/Docs/%D0%A2%D0%9F_%D0%9C%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20FarSharing.pdf)
 
+## Videos
+[Technical review](https://drive.google.com/file/d/1qqOipOvgvJPp_N8U4e2PSARuOJQg56KI/view?usp=sharing)
+
 ## Links
 [Miro](https://miro.com/app/board/uXjVOFFaGKg=/?invite_link_id=99675099240)
 
