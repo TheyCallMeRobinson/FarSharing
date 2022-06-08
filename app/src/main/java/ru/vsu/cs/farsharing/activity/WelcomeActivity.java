@@ -6,6 +6,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.yandex.metrica.YandexMetrica;
+
 import ru.vsu.cs.farsharing.R;
 
 public class WelcomeActivity extends AppCompatActivity {
@@ -17,6 +19,8 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+        YandexMetrica.activate(this.getApplicationContext(), getString(R.string.metrika_api_key));
+        YandexMetrica.enableActivityAutoTracking(FarSharingApp.getInstance());
         setUpViews();
         setUpListeners();
     }

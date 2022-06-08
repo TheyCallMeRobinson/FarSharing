@@ -28,4 +28,5 @@
     <string name="bodyType">Тип кузова</string>
     <string name="helloWorld">Привет, Мир!</string>
     <string name="cars">Автомобили</string>
+    <string name="metrika_api_key">d7adeb85-3d8d-4bc2-ac69-60f906038aa0</string>
 </resources>
