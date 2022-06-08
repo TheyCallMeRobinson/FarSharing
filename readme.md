@@ -15,6 +15,7 @@ Simple carsharing app
 
 ## Videos
 [Technical review](https://drive.google.com/file/d/1qqOipOvgvJPp_N8U4e2PSARuOJQg56KI/view?usp=sharing)
+[Videopresentation](https://drive.google.com/file/d/1CPlXqF3kGKumL5BROO165uUFE-wQISyJ/view?usp=sharing)
 
 ## Links
 [Miro](https://miro.com/app/board/uXjVOFFaGKg=/?invite_link_id=99675099240)
