@@ -41,7 +41,7 @@ public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.ViewHold
         holder.tvBrand.setText(item.getBrand());
         holder.tvModel.setText(item.getModel());
         holder.tvStateNumber.setText(item.getStateNumber());
-        holder.tvStatus.setText(item.getAvailable() ? "Свободна" : "Занята");
+        holder.tvStatus.setText(item.getAvailable() ? "Свободен" : "Занят");
         holder.tvStatus.setTextColor(item.getAvailable() ? Color.GREEN : Color.RED);
     }
 
