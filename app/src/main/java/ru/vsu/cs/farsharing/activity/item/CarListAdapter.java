@@ -12,14 +12,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import ru.vsu.cs.farsharing.R;
+import ru.vsu.cs.farsharing.model.response.BriefCarInfoResponse;
 
 
 public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.ViewHolder> {
     private final LayoutInflater inflater;
-    private final List<CarListItem> list;
+    private final List<BriefCarInfoResponse> list;
     private final OnCarListItemListener onCarListItemListener;
 
-    public CarListAdapter(@NonNull Activity context, List<CarListItem> list, OnCarListItemListener onCarListItemListener) {
+    public CarListAdapter(@NonNull Activity context, List<BriefCarInfoResponse> list, OnCarListItemListener onCarListItemListener) {
         this.inflater = LayoutInflater.from(context);
         this.list = list;
         this.onCarListItemListener = onCarListItemListener;
@@ -34,11 +35,11 @@ public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        CarListItem item = list.get(position);
+        BriefCarInfoResponse item = list.get(position);
         holder.tvBrand.setText(item.getBrand());
         holder.tvModel.setText(item.getModel());
         holder.tvStateNumber.setText(item.getStateNumber());
-        holder.tvStatus.setText(item.getStatus());
+        holder.tvStatus.setText(item.getAvailable().toString());
     }
 
     @Override

@@ -28,7 +28,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private void setUpListeners() {
         login.setOnClickListener(v -> {
-                Intent toLogin = new Intent(WelcomeActivity.this, CarDetailsActivity.class);
+                Intent toLogin = new Intent(WelcomeActivity.this, MainActivity.class);
                 startActivity(toLogin);
         });
         register.setOnClickListener(v -> {
