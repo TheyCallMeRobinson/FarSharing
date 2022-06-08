@@ -1,7 +1,11 @@
 package ru.vsu.cs.farsharing.model.response;
 
 import ru.vsu.cs.farsharing.model.enums.Status;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class ClientDataResponse {
     String email;
     String password;

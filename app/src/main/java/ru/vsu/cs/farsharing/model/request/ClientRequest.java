@@ -1,5 +1,9 @@
 package ru.vsu.cs.farsharing.model.request;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class ClientRequest {
     String email;
     String password;
