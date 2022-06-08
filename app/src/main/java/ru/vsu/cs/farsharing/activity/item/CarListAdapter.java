@@ -1,6 +1,7 @@
 package ru.vsu.cs.farsharing.activity.item;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,10 +37,12 @@ public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         BriefCarInfoResponse item = list.get(position);
+
         holder.tvBrand.setText(item.getBrand());
         holder.tvModel.setText(item.getModel());
         holder.tvStateNumber.setText(item.getStateNumber());
-        holder.tvStatus.setText(item.getAvailable().toString());
+        holder.tvStatus.setText(item.getAvailable() ? "Свободна" : "Занята");
+        holder.tvStatus.setTextColor(item.getAvailable() ? Color.GREEN : Color.RED);
     }
 
     @Override

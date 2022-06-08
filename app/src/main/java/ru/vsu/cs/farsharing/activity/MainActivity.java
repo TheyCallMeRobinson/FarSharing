@@ -1,14 +1,17 @@
 package ru.vsu.cs.farsharing.activity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -35,20 +38,22 @@ public class MainActivity extends AppCompatActivity implements OnCarListItemList
     private void setUpViews() {
         carsRecyclerList = findViewById(R.id.carList);
         CarListAdapter carListAdapter = new CarListAdapter(this, carsList, this);
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        carsRecyclerList.setLayoutManager(manager);
+        carsRecyclerList.setHasFixedSize(true);
+        carsRecyclerList.setAdapter(carListAdapter);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(carsRecyclerList.getContext(), 1);
         carsRecyclerList.addItemDecoration(dividerItemDecoration);
-        carsRecyclerList.setAdapter(carListAdapter);
     }
 
     @Override
     public void onItemClick(int position) {
-        //Intent toDetailedForecastData = new Intent(this, ForecastData.class);
-        //startActivity(toDetailedForecastData);
+        Intent toDetailedCarData = new Intent(this, CarDetailsActivity.class);
+        startActivity(toDetailedCarData);
     }
 
     private class GetAllCars extends AsyncTask<Void, Void, Void> {
 
-        private List<BriefCarInfoResponse> cars;
         @Override
         protected Void doInBackground(Void... voids) {
             Retrofit retrofit = AppConfig.retrofit;
@@ -57,13 +62,14 @@ public class MainActivity extends AppCompatActivity implements OnCarListItemList
             Call<List<BriefCarInfoResponse>> call = carService.getCars();
             try {
                 Response<List<BriefCarInfoResponse>> response = call.execute();
-                this.cars = response.body();
+                carsList = response.body();
             } catch (IOException e) {
                 e.printStackTrace();
             }
             return null;
         }
 
+        @Override
         protected void onPostExecute(Void aVoid) {
             setUpViews();
         }

@@ -122,7 +122,7 @@
             app:layout_constraintStart_toStartOf="@+id/pricePerHour" />
 
         <TextView
-            android:id="@+id/textView22"
+            android:id="@+id/rentForHoursTextView"
             style="@style/Text.HintTextView"
             android:text="@string/rentForHours"
             app:layout_constraintBottom_toTopOf="@+id/rentForHours"
