@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -19,8 +18,7 @@ import retrofit2.Retrofit;
 import ru.vsu.cs.farsharing.R;
 import ru.vsu.cs.farsharing.activity.item.CarListAdapter;
 import ru.vsu.cs.farsharing.activity.item.OnCarListItemListener;
-import ru.vsu.cs.farsharing.config.AppConfig;
-import ru.vsu.cs.farsharing.model.entity.CarEntity;
+import ru.vsu.cs.farsharing.config.FarSharingApp;
 import ru.vsu.cs.farsharing.model.response.BriefCarInfoResponse;
 import ru.vsu.cs.farsharing.service.CarService;
 
@@ -32,7 +30,6 @@ public class MainActivity extends AppCompatActivity implements OnCarListItemList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new GetAllCars().execute();
     }
 
     private void setUpViews() {
@@ -50,28 +47,5 @@ public class MainActivity extends AppCompatActivity implements OnCarListItemList
     public void onItemClick(int position) {
         Intent toDetailedCarData = new Intent(this, CarDetailsActivity.class);
         startActivity(toDetailedCarData);
-    }
-
-    private class GetAllCars extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            Retrofit retrofit = AppConfig.retrofit;
-
-            CarService carService = retrofit.create(CarService.class);
-            Call<List<BriefCarInfoResponse>> call = carService.getCars();
-            try {
-                Response<List<BriefCarInfoResponse>> response = call.execute();
-                carsList = response.body();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            setUpViews();
-        }
     }
 }

@@ -6,8 +6,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.yandex.metrica.YandexMetrica;
-
 import ru.vsu.cs.farsharing.R;
 
 public class WelcomeActivity extends AppCompatActivity {
@@ -19,8 +17,22 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        YandexMetrica.activate(this.getApplicationContext(), getString(R.string.metrika_api_key));
-        YandexMetrica.enableActivityAutoTracking(FarSharingApp.getInstance());
+//        YandexMetrica.activate(this.getApplicationContext(), getString(R.string.metrika_api_key));
+//        YandexMetrica.enableActivityAutoTracking(FarSharingApp.getInstance());
+//        CarService carService = AppConfig.retrofit.create(CarService.class);
+//        Call<List<BriefCarInfoResponse>> jsonObjectCall = carService.getCars();
+//        jsonObjectCall.enqueue(new Callback<List<BriefCarInfoResponse>>() {
+//            @Override
+//            public void onResponse(Call<List<BriefCarInfoResponse>> call, Response<List<BriefCarInfoResponse>> response) {
+//                System.out.println("kek");
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<BriefCarInfoResponse>> call, Throwable t) {
+//                Toast.makeText(WelcomeActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+//                System.err.println(t.getMessage());
+//            }
+//        });
         setUpViews();
         setUpListeners();
     }
@@ -32,7 +44,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private void setUpListeners() {
         login.setOnClickListener(v -> {
-                Intent toLogin = new Intent(WelcomeActivity.this, MainActivity.class);
+                Intent toLogin = new Intent(WelcomeActivity.this, LoginActivity.class);
                 startActivity(toLogin);
         });
         register.setOnClickListener(v -> {
