@@ -29,25 +29,35 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/nameField"
+                android:id="@+id/lastNameField"
                 style="@style/Text.EditText"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="50dp"
                 android:ems="10"
-                android:hint="@string/registerNameHint"
+                android:hint="Фамилия"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/midNameField" />
+
+            <EditText
+                android:id="@+id/firstNameField"
+                style="@style/Text.EditText"
+                android:ems="10"
+                android:hint="Имя"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/registerText" />
 
             <EditText
-                android:id="@+id/birthdateField"
+                android:id="@+id/midNameField"
                 style="@style/Text.EditText"
                 android:ems="10"
-                android:hint="@string/registerBirthdateHint"
-                android:inputType="date"
+                android:hint="Отчество"
+                android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nameField" />
+                app:layout_constraintTop_toBottomOf="@+id/firstNameField" />
 
             <EditText
                 android:id="@+id/licenseNumberField"
@@ -74,6 +84,16 @@
                 style="@style/Text.EditText"
                 android:ems="10"
                 android:hint="@string/registerPasswordHint"
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailField" />
+
+            <EditText
+                android:id="@+id/registerPasswordRepeatField"
+                style="@style/Text.EditText"
+                android:ems="10"
+                android:hint="Повторите пароль"
                 android:inputType="textPassword"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

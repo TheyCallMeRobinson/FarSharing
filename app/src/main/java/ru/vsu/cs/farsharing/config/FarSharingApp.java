@@ -8,7 +8,6 @@ import java.util.UUID;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import ru.vsu.cs.farsharing.model.entity.UserEntity;
 import ru.vsu.cs.farsharing.model.enums.Role;
 import ru.vsu.cs.farsharing.service.CarService;
 import ru.vsu.cs.farsharing.service.ClientService;
@@ -17,7 +16,7 @@ import ru.vsu.cs.farsharing.service.UserService;
 
 public final class FarSharingApp extends Application {
 
-    public final String baseUrl = "http://farsharing-server.herokuapp.com";
+    public final String baseUrl = "http://farsharing-server.herokuapp.com/api/";
 
     private Retrofit retrofit;
 

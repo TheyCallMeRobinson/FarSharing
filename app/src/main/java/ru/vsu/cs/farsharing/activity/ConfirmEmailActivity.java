@@ -7,12 +7,16 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.UUID;
+
 import ru.vsu.cs.farsharing.R;
 
 public class ConfirmEmailActivity extends AppCompatActivity {
 
     private Button confirmEmailNextButton;
     private EditText confirmCodeText;
+    //private UUID client;
+    //private ClientDataResponse client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
