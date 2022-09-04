@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.LoginActivity">
+    tools:context=".activity.login.LoginActivity">
 
     <Button
         android:id="@+id/loginNextButton"
@@ -15,33 +15,60 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/bugReportTextView"
+        android:id="@+id/loginTextView"
         style="@style/Text.TextView"
         android:text="@string/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/loginEmailField"
-        style="@style/Text.EditText"
-        android:layout_marginTop="100dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:hint="@string/emailFieldHint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bugReportTextView"
-        android:autofillHints="username" />
 
-    <EditText
-        android:id="@+id/loginPasswordField"
-        style="@style/Text.EditText"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:hint="@string/passwordFieldHint"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loginField"
+        style="@style/Widget.Design.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="33dp"
+        android:hint="Email"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginTextView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/loginEmailField"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:autofillHints="username"
+            android:ems="10"
+            android:inputType="textEmailAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Design.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="33dp"
+        android:hint="Пароль"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginEmailField"
-        android:autofillHints="password" />
+        app:layout_constraintTop_toBottomOf="@+id/loginField">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/loginPasswordField"
+            android:autofillHints="password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

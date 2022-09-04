@@ -40,13 +40,13 @@
             android:name=".activity.ConfirmEmailActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.RegisterActivity"
+            android:name=".activity.register.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".activity.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.WelcomeActivity"
+            android:name=".activity.welcome.WelcomeActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

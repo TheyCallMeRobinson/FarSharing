@@ -10,10 +10,11 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import ru.vsu.cs.farsharing.model.request.ClientRequest;
 import ru.vsu.cs.farsharing.model.response.ClientDataResponse;
+import ru.vsu.cs.farsharing.model.response.IAuthResponse;
 
 public interface ClientService {
     @POST("/client/register")
-    Call<Void> register(@Body ClientRequest registerRequest);
+    Call<IAuthResponse> register(@Body ClientRequest registerRequest);
 
     @GET("/client/{client_uid}")
     Call<ClientDataResponse> getClientData(@Path(value = "client_uid") UUID client_uid);

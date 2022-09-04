@@ -1,4 +1,4 @@
-package ru.vsu.cs.farsharing.activity;
+package ru.vsu.cs.farsharing.activity.register;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -16,9 +17,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import ru.vsu.cs.farsharing.R;
+import ru.vsu.cs.farsharing.activity.ConfirmEmailActivity;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
 import ru.vsu.cs.farsharing.model.request.ClientRequest;
-import ru.vsu.cs.farsharing.service.ClientService;
+import ru.vsu.cs.farsharing.model.response.IAuthResponse;
 import ru.vsu.cs.farsharing.service.FieldValidatorService;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -74,15 +76,17 @@ public class RegisterActivity extends AppCompatActivity {
                 clientRequest.setLicense(licenseField.getText().toString());
                 clientRequest.setEmail(emailField.getText().toString());
                 clientRequest.setPassword(passwordField.getText().toString());
-                FarSharingApp.getInstance().getClientService().register(clientRequest).enqueue(new Callback<Void>() {
+                FarSharingApp.getInstance().getClientService().register(clientRequest).enqueue(new Callback<IAuthResponse>() {
                     @Override
-                    public void onResponse(Call<Void> call, Response<Void> response) {
-                        //toEmailConfirm.putExtra(new Bundle(response.body()));
+                    public void onResponse(@NonNull Call<IAuthResponse> call, @NonNull Response<IAuthResponse> response) {
+                        assert response.body() != null;
+                        toEmailConfirm.putExtra("clientUid", response.body().getAuthClientResponse().getUid());
+                        toEmailConfirm.putExtra("userUid", response.body().getUserUid());
                         startActivity(toEmailConfirm);
                     }
 
                     @Override
-                    public void onFailure(Call<Void> call, Throwable t) {
+                    public void onFailure(@NonNull Call<IAuthResponse> call, @NonNull Throwable t) {
                         Toast.makeText(FarSharingApp.getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });

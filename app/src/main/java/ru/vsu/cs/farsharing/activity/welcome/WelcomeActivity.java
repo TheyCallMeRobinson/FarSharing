@@ -1,4 +1,4 @@
-package ru.vsu.cs.farsharing.activity;
+package ru.vsu.cs.farsharing.activity.welcome;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,12 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.yandex.metrica.YandexMetrica;
+
 import ru.vsu.cs.farsharing.R;
+import ru.vsu.cs.farsharing.activity.login.LoginActivity;
+import ru.vsu.cs.farsharing.activity.register.RegisterActivity;
+import ru.vsu.cs.farsharing.config.FarSharingApp;
 
 public class WelcomeActivity extends AppCompatActivity {
     private Button login;
@@ -16,8 +21,8 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-//        YandexMetrica.activate(this.getApplicationContext(), getString(R.string.metrika_api_key));
-//        YandexMetrica.enableActivityAutoTracking(FarSharingApp.getInstance());
+        YandexMetrica.activate(this.getApplicationContext(), getString(R.string.metrika_api_key));
+        YandexMetrica.enableActivityAutoTracking(FarSharingApp.getInstance());
         setUpViews();
         setUpListeners();
     }

@@ -1,4 +1,4 @@
-package ru.vsu.cs.farsharing.activity;
+package ru.vsu.cs.farsharing.activity.login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import ru.vsu.cs.farsharing.R;
+import ru.vsu.cs.farsharing.activity.MainActivity;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
+import ru.vsu.cs.farsharing.databinding.ActivityLoginBinding;
 import ru.vsu.cs.farsharing.model.enums.Role;
 import ru.vsu.cs.farsharing.model.request.UserRequest;
 import ru.vsu.cs.farsharing.model.response.IAuthResponse;
@@ -21,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private Button loginNextButton;
     private EditText loginEmailField, loginPasswordField;
+    private ActivityLoginBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,8 @@ public class LoginActivity extends AppCompatActivity {
         setUpViews();
         setUpListeners();
     }
+
+
 
     private void setUpViews() {
         loginNextButton = findViewById(R.id.loginNextButton);

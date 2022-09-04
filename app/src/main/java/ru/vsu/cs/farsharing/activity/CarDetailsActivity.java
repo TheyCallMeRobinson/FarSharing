@@ -2,7 +2,6 @@ package ru.vsu.cs.farsharing.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -12,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import ru.vsu.cs.farsharing.R;
+import ru.vsu.cs.farsharing.activity.login.LoginActivity;
 
 public class CarDetailsActivity extends AppCompatActivity {
 
