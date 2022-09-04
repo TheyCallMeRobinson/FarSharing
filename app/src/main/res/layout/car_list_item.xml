@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="120dp"
     android:divider="@color/colorPrimaryDark"
     android:orientation="horizontal">
 
@@ -16,38 +16,41 @@
         <TextView
             android:id="@+id/brandListItem"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.75"
+            android:layout_height="50dp"
             android:paddingStart="10dp"
             android:text="LADA"
-            android:textSize="8pt" />
+            android:textSize="15pt" />
 
         <TextView
             android:id="@+id/modelListItem"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="35dp"
             android:paddingStart="10dp"
             android:text="Priora"
+            android:textSize="10pt"
             android:textAlignment="textStart" />
-    </LinearLayout>
 
-    <TextView
-        android:id="@+id/stateNumberListItem"
-        style="@style/CarListItem"
-        android:layout_width="74dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0"
-        android:gravity="center"
-        android:text="A111AA"
-        app:layout_constraintEnd_toStartOf="@+id/brandList"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/stateNumberListItem"
+            style="@style/CarListItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="textStart"
+            android:paddingTop="6dp"
+            android:paddingStart="10dp"
+            android:text="A111AA"
+            android:fontFamily="@font/road_numbers_otf"
+            android:textSize="15pt"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/brandList"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/statusListItem"
         android:layout_width="78dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.5"
+        android:layout_weight="0.33"
         android:gravity="center"
         android:text="Свободна"
         android:textAlignment="center" />

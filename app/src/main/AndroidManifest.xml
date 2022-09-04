@@ -34,7 +34,7 @@
             android:name=".activity.PaymentActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.main.MainActivity"
             android:exported="false" />
         <activity
             android:name=".activity.ConfirmEmailActivity"

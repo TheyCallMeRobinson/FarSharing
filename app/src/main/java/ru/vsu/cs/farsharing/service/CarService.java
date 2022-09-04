@@ -13,18 +13,18 @@ import ru.vsu.cs.farsharing.model.entity.CarEntity;
 import ru.vsu.cs.farsharing.model.response.BriefCarInfoResponse;
 
 public interface CarService {
-    @GET("/cars")
+    @GET("api/cars")
     Call<List<BriefCarInfoResponse>> getCars();
 
-    @POST("/car")
+    @POST("api/car")
     Call<Void> postCar(CarEntity carEntity);
 
-    @GET("/car/{uid}")
+    @GET("api/car/{uid}")
     Call<BriefCarInfoResponse> getCar(@Path(value = "uid") UUID uid);
 
-    @PUT("/car/{uid}")
+    @PUT("api/car/{uid}")
     Call<CarEntity> updateCar(@Path(value = "uid") UUID uid, CarEntity entity);
 
-    @DELETE("/car/{uid}")
+    @DELETE("api/car/{uid}")
     Call<Void> deleteCar(@Path(value = "uid") UUID uid);
 }

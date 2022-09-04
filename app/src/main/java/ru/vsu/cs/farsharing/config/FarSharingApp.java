@@ -16,7 +16,7 @@ import ru.vsu.cs.farsharing.service.UserService;
 
 public final class FarSharingApp extends Application {
 
-    public final String baseUrl = "http://farsharing-server.herokuapp.com/api/";
+    public final String baseUrl = "http://farsharing-server.herokuapp.com/";
 
     private Retrofit retrofit;
 

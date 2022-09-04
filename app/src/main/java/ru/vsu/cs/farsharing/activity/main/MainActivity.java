@@ -1,7 +1,6 @@
-package ru.vsu.cs.farsharing.activity;
+package ru.vsu.cs.farsharing.activity.main;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,18 +8,11 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.io.IOException;
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Response;
-import retrofit2.Retrofit;
 import ru.vsu.cs.farsharing.R;
-import ru.vsu.cs.farsharing.activity.item.CarListAdapter;
-import ru.vsu.cs.farsharing.activity.item.OnCarListItemListener;
-import ru.vsu.cs.farsharing.config.FarSharingApp;
+import ru.vsu.cs.farsharing.activity.CarDetailsActivity;
 import ru.vsu.cs.farsharing.model.response.BriefCarInfoResponse;
-import ru.vsu.cs.farsharing.service.CarService;
 
 public class MainActivity extends AppCompatActivity implements OnCarListItemListener {
     private RecyclerView carsRecyclerList;

@@ -1,4 +1,4 @@
-package ru.vsu.cs.farsharing.activity.item;
+package ru.vsu.cs.farsharing.activity.main;
 
 import android.app.Activity;
 import android.graphics.Color;

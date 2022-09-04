@@ -11,9 +11,9 @@ import ru.vsu.cs.farsharing.model.request.UserRequest;
 import ru.vsu.cs.farsharing.model.response.IAuthResponse;
 
 public interface UserService {
-    @POST("/user/auth")
+    @POST("api/user/auth")
     Call<IAuthResponse> auth(@Body UserRequest userRequest);
 
-    @GET("/user/activate/{uid}/{code}")
+    @GET("api/user/activate/{uid}/{code}")
     Call<Boolean> activateAccount(@Path(value = "uid") UUID uid, @Path(value = "code") Integer code);
 }

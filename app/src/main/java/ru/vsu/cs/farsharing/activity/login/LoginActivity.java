@@ -4,15 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import ru.vsu.cs.farsharing.R;
-import ru.vsu.cs.farsharing.activity.MainActivity;
+import ru.vsu.cs.farsharing.activity.main.MainActivity;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
 import ru.vsu.cs.farsharing.databinding.ActivityLoginBinding;
 import ru.vsu.cs.farsharing.model.enums.Role;
@@ -28,17 +30,16 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         setUpViews();
         setUpListeners();
     }
 
-
-
     private void setUpViews() {
-        loginNextButton = findViewById(R.id.loginNextButton);
-        loginEmailField = findViewById(R.id.loginEmailField);
-        loginPasswordField = findViewById(R.id.loginPasswordField);
+        loginNextButton = binding.loginNextButton;
+        loginEmailField = binding.loginEmailField;
+        loginPasswordField = binding.loginPasswordField;
     }
 
     private void setUpListeners() {
@@ -50,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
     private void logIn(String email, String password) {
         FarSharingApp.getInstance().getUserService().auth(new UserRequest(email, password)).enqueue(new Callback<IAuthResponse>() {
             @Override
-            public void onResponse(Call<IAuthResponse> call, Response<IAuthResponse> response) {
+            public void onResponse(@NonNull Call<IAuthResponse> call, @NonNull Response<IAuthResponse> response) {
                 if (response.body() != null) {
                     FarSharingApp.getInstance().setUserUUID(response.body().getUserUid());
                     if (response.body().getAuthAdminResponse() != null) {
@@ -64,16 +65,18 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(toMainActivity);
                     }
                     else {
-                        Toast.makeText(FarSharingApp.getContext(), "Данный пользователь был удален", Toast.LENGTH_LONG).show();
+                        Snackbar.make(binding.getRoot(), "Данный пользователь был удален", Snackbar.LENGTH_LONG).show();
                     }
                 } else {
-                    Toast.makeText(FarSharingApp.getContext(), "Неверный логин или пароль", Toast.LENGTH_LONG).show();
+                    Snackbar.make(binding.getRoot(), "Неверный логин или пароль", Snackbar.LENGTH_LONG).show();
+                    loginPasswordField.setBackgroundTintList(getBaseContext().getColorStateList(R.color.danger));
+                    loginEmailField.setBackgroundTintList(getBaseContext().getColorStateList(R.color.danger));
                 }
                 loginPasswordField.setText("");
             }
 
             @Override
-            public void onFailure(Call<IAuthResponse> call, Throwable t) {
+            public void onFailure(@NonNull Call<IAuthResponse> call, @NonNull Throwable t) {
                 t.printStackTrace();
             }
         });

@@ -7,17 +7,17 @@
     tools:context=".activity.welcome.WelcomeActivity">
 
     <Button
-        android:id="@+id/register_button"
+        android:id="@+id/registerButton"
         style="@style/Button.NoScroll"
         android:layout_marginBottom="18dp"
         android:text="@string/register"
-        app:layout_constraintBottom_toTopOf="@+id/login_button"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/login_button"
+        android:id="@+id/loginButton"
         style="@style/Button.NoScroll"
         android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,7 +26,7 @@
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/welcome_text"
+        android:id="@+id/welcomeText"
         style="@style/Text.TextView"
         android:text="@string/welcome"
         app:layout_constraintEnd_toEndOf="parent"

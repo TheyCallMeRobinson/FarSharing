@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 import ru.vsu.cs.farsharing.model.entity.LocationEntity;
 
 public interface LocationService {
-    @GET("/locations")
+    @GET("api/locations")
     Call<List<LocationEntity>> getAllLocations();
 }

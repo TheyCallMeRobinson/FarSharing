@@ -19,11 +19,13 @@ import retrofit2.Response;
 import ru.vsu.cs.farsharing.R;
 import ru.vsu.cs.farsharing.activity.ConfirmEmailActivity;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
+import ru.vsu.cs.farsharing.databinding.ActivityRegisterBinding;
 import ru.vsu.cs.farsharing.model.request.ClientRequest;
 import ru.vsu.cs.farsharing.model.response.IAuthResponse;
 import ru.vsu.cs.farsharing.service.FieldValidatorService;
 
 public class RegisterActivity extends AppCompatActivity {
+    private ActivityRegisterBinding binding;
     private Button registerNextButton;
     private EditText lastNameField;
     private EditText firstNameField;
@@ -36,20 +38,21 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        binding = ActivityRegisterBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         setUpViews();
         setUpListeners();
     }
 
     private void setUpViews() {
-        registerNextButton = findViewById(R.id.registerNextButton);
-        lastNameField = findViewById(R.id.lastNameField);
-        firstNameField = findViewById(R.id.firstNameField);
-        midNameField = findViewById(R.id.midNameField);
-        licenseField = findViewById(R.id.licenseNumberField);
-        emailField = findViewById(R.id.emailField);
-        passwordField = findViewById(R.id.registerPasswordField);
-        passwordRepeatField = findViewById(R.id.registerPasswordRepeatField);
+        registerNextButton = binding.registerNextButton;
+        lastNameField = binding.lastNameField;
+        firstNameField = binding.firstNameField;
+        midNameField = binding.midNameField;
+        licenseField = binding.licenseNumberField;
+        emailField = binding.emailField;
+        passwordField = binding.registerPasswordField;
+        passwordRepeatField = binding.registerPasswordRepeatField;
     }
 
     private List<EditText> getWrongInputs() { // изменить
@@ -69,13 +72,19 @@ public class RegisterActivity extends AppCompatActivity {
             var wrongFields = getWrongInputs();
             if (wrongFields.isEmpty()) {
                 Intent toEmailConfirm = new Intent(RegisterActivity.this, ConfirmEmailActivity.class);
-                var clientRequest = new ClientRequest();
-                clientRequest.setLastName(lastNameField.getText().toString());
-                clientRequest.setFirstName(firstNameField.getText().toString());
-                clientRequest.setMidName(midNameField.getText().toString());
-                clientRequest.setLicense(licenseField.getText().toString());
-                clientRequest.setEmail(emailField.getText().toString());
-                clientRequest.setPassword(passwordField.getText().toString());
+                var clientRequest = new ClientRequest(
+                    emailField.getText().toString(),
+                    passwordField.getText().toString(),
+                    licenseField.getText().toString(),
+                    firstNameField.getText().toString(),
+                    midNameField.getText().toString(),
+                    lastNameField.getText().toString(),
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                );
                 FarSharingApp.getInstance().getClientService().register(clientRequest).enqueue(new Callback<IAuthResponse>() {
                     @Override
                     public void onResponse(@NonNull Call<IAuthResponse> call, @NonNull Response<IAuthResponse> response) {

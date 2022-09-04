@@ -12,24 +12,28 @@ import ru.vsu.cs.farsharing.R;
 import ru.vsu.cs.farsharing.activity.login.LoginActivity;
 import ru.vsu.cs.farsharing.activity.register.RegisterActivity;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
+import ru.vsu.cs.farsharing.databinding.ActivityLoginBinding;
+import ru.vsu.cs.farsharing.databinding.ActivityWelcomeBinding;
 
 public class WelcomeActivity extends AppCompatActivity {
+    private ActivityWelcomeBinding binding;
     private Button login;
     private Button register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
-        YandexMetrica.activate(this.getApplicationContext(), getString(R.string.metrika_api_key));
-        YandexMetrica.enableActivityAutoTracking(FarSharingApp.getInstance());
+        binding = ActivityWelcomeBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+//        YandexMetrica.activate(this.getApplicationContext(), getString(R.string.metrika_api_key));
+//        YandexMetrica.enableActivityAutoTracking(FarSharingApp.getInstance());
         setUpViews();
         setUpListeners();
     }
 
     private void setUpViews() {
-        login = findViewById(R.id.login_button);
-        register = findViewById(R.id.register_button);
+        login = binding.loginButton;
+        register = binding.registerButton;
     }
 
     private void setUpListeners() {
