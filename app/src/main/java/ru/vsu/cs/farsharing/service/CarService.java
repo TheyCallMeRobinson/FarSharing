@@ -14,13 +14,13 @@ import ru.vsu.cs.farsharing.model.response.BriefCarInfoResponse;
 
 public interface CarService {
     @GET("api/cars")
-    Call<List<BriefCarInfoResponse>> getCars();
+    Call<List<CarEntity>> getCars();
 
     @POST("api/car")
     Call<Void> postCar(CarEntity carEntity);
 
     @GET("api/car/{uid}")
-    Call<BriefCarInfoResponse> getCar(@Path(value = "uid") UUID uid);
+    Call<CarEntity> getCar(@Path(value = "uid") UUID uid);
 
     @PUT("api/car/{uid}")
     Call<CarEntity> updateCar(@Path(value = "uid") UUID uid, CarEntity entity);

@@ -13,15 +13,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import ru.vsu.cs.farsharing.R;
-import ru.vsu.cs.farsharing.model.response.BriefCarInfoResponse;
+import ru.vsu.cs.farsharing.model.entity.CarEntity;
 
 
 public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.ViewHolder> {
     private final LayoutInflater inflater;
-    private final List<BriefCarInfoResponse> list;
+    private final List<CarEntity> list;
     private final OnCarListItemListener onCarListItemListener;
 
-    public CarListAdapter(@NonNull Activity context, List<BriefCarInfoResponse> list, OnCarListItemListener onCarListItemListener) {
+    public CarListAdapter(@NonNull Activity context, List<CarEntity> list, OnCarListItemListener onCarListItemListener) {
         this.inflater = LayoutInflater.from(context);
         this.list = list;
         this.onCarListItemListener = onCarListItemListener;
@@ -36,13 +36,13 @@ public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        BriefCarInfoResponse item = list.get(position);
+        CarEntity item = list.get(position);
 
-        holder.tvBrand.setText(item.getBrand());
-        holder.tvModel.setText(item.getModel());
-        holder.tvStateNumber.setText(item.getStateNumber());
-        holder.tvStatus.setText(item.getIsAvailable() ? "Свободен" : "Занят");
-        holder.tvStatus.setTextColor(item.getIsAvailable() ? Color.GREEN : Color.RED);
+        holder.brand.setText(item.getBrand());
+        holder.model.setText(item.getModel());
+        holder.stateNumber.setText(item.getStateNumber());
+        holder.status.setText(item.getIsAvailable() ? "Свободен" : "Занят");
+        holder.status.setTextColor(item.getIsAvailable() ? Color.GREEN : Color.RED);
     }
 
     @Override
@@ -51,18 +51,18 @@ public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.ViewHold
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        final TextView tvBrand;
-        final TextView tvModel;
-        final TextView tvStateNumber;
-        final TextView tvStatus;
+        final TextView brand;
+        final TextView model;
+        final TextView stateNumber;
+        final TextView status;
         OnCarListItemListener onItemListener;
 
         public ViewHolder(@NonNull View itemView, OnCarListItemListener onItemListener) {
             super(itemView);
-            this.tvBrand = itemView.findViewById(R.id.brandListItem);
-            this.tvModel = itemView.findViewById(R.id.modelListItem);
-            this.tvStateNumber = itemView.findViewById(R.id.stateNumberListItem);
-            this.tvStatus = itemView.findViewById(R.id.statusListItem);
+            this.brand = itemView.findViewById(R.id.brandListItem);
+            this.model = itemView.findViewById(R.id.modelListItem);
+            this.stateNumber = itemView.findViewById(R.id.stateNumberListItem);
+            this.status = itemView.findViewById(R.id.statusListItem);
             this.onItemListener = onItemListener;
             itemView.setOnClickListener(this);
         }

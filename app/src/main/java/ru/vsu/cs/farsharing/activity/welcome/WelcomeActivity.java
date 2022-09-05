@@ -2,7 +2,9 @@ package ru.vsu.cs.farsharing.activity.welcome;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,11 +14,11 @@ import ru.vsu.cs.farsharing.R;
 import ru.vsu.cs.farsharing.activity.login.LoginActivity;
 import ru.vsu.cs.farsharing.activity.register.RegisterActivity;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
-import ru.vsu.cs.farsharing.databinding.ActivityLoginBinding;
 import ru.vsu.cs.farsharing.databinding.ActivityWelcomeBinding;
 
 public class WelcomeActivity extends AppCompatActivity {
     private ActivityWelcomeBinding binding;
+    private ImageView logo;
     private Button login;
     private Button register;
 
@@ -32,8 +34,11 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     private void setUpViews() {
+        logo = binding.logo;
+        logo.setVisibility(View.VISIBLE);
         login = binding.loginButton;
         register = binding.registerButton;
+
     }
 
     private void setUpListeners() {
