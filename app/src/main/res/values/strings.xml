@@ -23,7 +23,7 @@
     <string name="model">Модель</string>
     <string name="parkingAddress">Адрес парковки</string>
     <string name="costPerHour">Цена в час, р.</string>
-    <string name="rentForHours">Аренда на, ч.</string>
+    <string name="rentForHours">Аренда на</string>
     <string name="carColor">Цвет</string>
     <string name="bodyType">Тип кузова</string>
     <string name="helloWorld">Привет, Мир!</string>

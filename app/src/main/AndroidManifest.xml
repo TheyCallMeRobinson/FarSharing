@@ -38,7 +38,7 @@
             android:name=".activity.TextSupportActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.CarDetailsActivity"
+            android:name=".activity.cardetails.CarDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".activity.PaymentActivity"

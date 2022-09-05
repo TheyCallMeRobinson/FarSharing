@@ -16,13 +16,10 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import ru.vsu.cs.farsharing.R;
-import ru.vsu.cs.farsharing.activity.CarDetailsActivity;
+import ru.vsu.cs.farsharing.activity.cardetails.CarDetailsActivity;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
 import ru.vsu.cs.farsharing.databinding.ActivityMainBinding;
-import ru.vsu.cs.farsharing.databinding.ActivityRegisterBinding;
 import ru.vsu.cs.farsharing.model.entity.CarEntity;
-import ru.vsu.cs.farsharing.model.response.BriefCarInfoResponse;
 
 public class MainActivity extends AppCompatActivity implements OnCarListItemListener {
     private RecyclerView carsRecyclerList;
@@ -66,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements OnCarListItemList
     @Override
     public void onItemClick(int position) {
         Intent toDetailedCarData = new Intent(this, CarDetailsActivity.class);
+        toDetailedCarData.putExtra("carUid", carsList.get(position).getUid());
         startActivity(toDetailedCarData);
     }
 }

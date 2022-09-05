@@ -1,5 +1,7 @@
 package ru.vsu.cs.farsharing.model.entity;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.UUID;
 import lombok.Getter;
 import lombok.Setter;
