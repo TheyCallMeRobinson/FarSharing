@@ -16,8 +16,6 @@ import lombok.var;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import ru.vsu.cs.farsharing.R;
-import ru.vsu.cs.farsharing.activity.ConfirmEmailActivity;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
 import ru.vsu.cs.farsharing.databinding.ActivityRegisterBinding;
 import ru.vsu.cs.farsharing.model.request.ClientRequest;
@@ -89,7 +87,7 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(@NonNull Call<IAuthResponse> call, @NonNull Response<IAuthResponse> response) {
                         assert response.body() != null;
-                        toEmailConfirm.putExtra("clientUid", response.body().getAuthClientResponse().getUid());
+                        toEmailConfirm.putExtra("clientUid", response.body().getAuthClientResponse().getClientUid());
                         toEmailConfirm.putExtra("userUid", response.body().getUserUid());
                         startActivity(toEmailConfirm);
                     }

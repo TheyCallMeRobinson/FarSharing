@@ -1,4 +1,4 @@
-package ru.vsu.cs.farsharing.activity;
+package ru.vsu.cs.farsharing.activity.register;
 
 import android.content.Intent;
 import android.os.Bundle;

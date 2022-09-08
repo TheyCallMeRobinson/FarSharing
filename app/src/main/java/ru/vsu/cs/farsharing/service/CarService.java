@@ -10,7 +10,6 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import ru.vsu.cs.farsharing.model.entity.CarEntity;
-import ru.vsu.cs.farsharing.model.response.BriefCarInfoResponse;
 
 public interface CarService {
     @GET("api/cars")

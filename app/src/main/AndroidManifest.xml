@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ru.vsu.cs.farsharing" >
+    package="ru.vsu.cs.farsharing">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,15 +14,18 @@
         android:roundIcon="@drawable/farsharing_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewApp"
-        android:usesCleartextTraffic="true" >
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activity.main.AdminMainActivity"
+            android:exported="false" />
         <activity
             android:name=".SplashScreen"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -41,13 +44,13 @@
             android:name=".activity.cardetails.CarDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.PaymentActivity"
+            android:name=".activity.payment.PaymentActivity"
             android:exported="false" />
         <activity
             android:name=".activity.main.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ConfirmEmailActivity"
+            android:name=".activity.register.ConfirmEmailActivity"
             android:exported="false" />
         <activity
             android:name=".activity.register.RegisterActivity"
@@ -57,8 +60,7 @@
             android:exported="false" />
         <activity
             android:name=".activity.welcome.WelcomeActivity"
-            android:exported="false" >
-        </activity>
+            android:exported="false"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

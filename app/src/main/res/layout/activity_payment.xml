@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.PaymentActivity">
+    tools:context=".activity.payment.PaymentActivity">
 
     <TextView
         android:id="@+id/textView6"
@@ -25,39 +25,80 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints,TextContrastCheck" />
 
-    <EditText
-        android:id="@+id/cardNumberEditText"
-        style="@style/Text.EditText"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cardNumberEditTextLayout"
+        style="@style/Widget.Design.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:ems="10"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="33dp"
         android:hint="@string/cardNumber"
-        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
 
-    <EditText
-        android:id="@+id/validThruEditText"
-        style="@style/Text.EditText"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cardNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/validThruEditTextLayout"
+        style="@style/Widget.Design.TextInputLayout"
         android:layout_width="142dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="50dp"
-        android:ems="10"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="48dp"
         android:hint="@string/validThru"
-        android:inputType="date"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardNumberEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/cardNumberEditTextLayout">
 
-    <EditText
-        android:id="@+id/cvvEditText"
-        style="@style/Text.EditText"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/validThruEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="16sp"
+            android:inputType="date" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cvvEditTextLayout"
+        style="@style/Widget.Design.TextInputLayout"
         android:layout_width="90dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="50dp"
-        android:ems="10"
+        android:layout_marginTop="48dp"
         android:hint="@string/cvv_cvc"
-        android:inputType="numberDecimal"
-        app:layout_constraintStart_toEndOf="@+id/validThruEditText"
-        app:layout_constraintTop_toBottomOf="@+id/cardNumberEditText" />
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/validThruEditTextLayout"
+        app:layout_constraintTop_toBottomOf="@+id/cardNumberEditTextLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cvvEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/savePaymentData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="33dp"
+        android:text="Сохранить данные карты?"
+        app:layout_constraintBottom_toTopOf="@+id/submitPaymentButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

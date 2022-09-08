@@ -1,6 +1,5 @@
 package ru.vsu.cs.farsharing.service;
 
-import android.graphics.Color;
 import android.widget.EditText;
 
 import java.util.List;
@@ -10,6 +9,15 @@ public class FieldValidatorService {
         return field.getText().toString().matches(regex);
     }
 
+    public static boolean checkFieldMatchesRegex(EditText field, String regex, String errorToShow) {
+        if (field.getText().toString().matches(regex)) {
+            return true;
+        } else {
+            field.setError(errorToShow);
+            return false;
+        }
+    }
+
     public static boolean checkFieldsMatch(EditText first, EditText second) {
         return first.getText().toString().equals(second.getText().toString());
     }
@@ -17,6 +25,19 @@ public class FieldValidatorService {
     public static void showWrongInputFields(List<EditText> wrongInputFields) {
         for(EditText field : wrongInputFields) {
             field.setError("Неверное значение");
+        }
+    }
+
+    public static boolean checkInputLength(EditText input, int length) {
+        return input.getText().toString().length() == length;
+    }
+
+    public static boolean checkInputLength(EditText field, int length, String errorToShow) {
+        if (field.getText().toString().length() == length) {
+            return true;
+        } else {
+            field.setError(errorToShow);
+            return false;
         }
     }
 }

@@ -15,16 +15,20 @@ import android.widget.TextView;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.IOException;
+import java.time.Instant;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Locale;
 import java.util.UUID;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import ru.vsu.cs.farsharing.activity.login.LoginActivity;
+import ru.vsu.cs.farsharing.activity.payment.PaymentActivity;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
 import ru.vsu.cs.farsharing.databinding.ActivityCarDetailsBinding;
 import ru.vsu.cs.farsharing.model.entity.CarEntity;
+import ru.vsu.cs.farsharing.model.request.AddContractRequest;
 
 public class CarDetailsActivity extends AppCompatActivity {
 
@@ -67,6 +71,38 @@ public class CarDetailsActivity extends AppCompatActivity {
         seekBar.setVisibility(View.INVISIBLE);
         total.setVisibility(View.INVISIBLE);
         rentForHours.setVisibility(View.INVISIBLE);
+    }
+
+    private void setUpListeners() {
+        confirmChoice.setOnClickListener(v -> {
+            AddContractRequest request = new AddContractRequest(
+                    FarSharingApp.getInstance().getClientUid(),
+                    car.getUid(),
+                    Instant.now().toString(),
+                    Instant.now().plus(seekBar.getProgress(), ChronoUnit.HOURS).toString()
+            );
+            FarSharingApp.getInstance().getContractService().createNewContract(request).enqueue(new Callback<UUID>() {
+                @Override
+                public void onResponse(@NonNull Call<UUID> call, @NonNull Response<UUID> response) {
+                    if (response.body() != null) {
+                        Intent toPaymentActivity = new Intent(CarDetailsActivity.this, PaymentActivity.class);
+                        UUID contractUid = response.body();
+                        toPaymentActivity.putExtra("contractUid", contractUid);
+                        toPaymentActivity.putExtra("carUid", car.getUid());
+                        toPaymentActivity.putExtra("hours", seekBar.getProgress());
+                        startActivity(toPaymentActivity);
+                    } else {
+                        Snackbar.make(binding.getRoot(), "Не удалось создать контракт", Snackbar.LENGTH_LONG).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(@NonNull Call<UUID> call, @NonNull Throwable t) {
+                    t.printStackTrace();
+                }
+            });
+
+        });
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -93,13 +129,6 @@ public class CarDetailsActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {}
-        });
-    }
-
-    private void setUpListeners() {
-        confirmChoice.setOnClickListener(v -> {
-            Intent toLogin = new Intent(CarDetailsActivity.this, LoginActivity.class);
-            startActivity(toLogin);
         });
     }
 

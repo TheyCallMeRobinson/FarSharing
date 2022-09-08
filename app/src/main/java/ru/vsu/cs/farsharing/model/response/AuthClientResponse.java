@@ -10,6 +10,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AuthClientResponse {
-    UUID uid;
+    UUID clientUid;
     List<CarEntity> cars;
 }

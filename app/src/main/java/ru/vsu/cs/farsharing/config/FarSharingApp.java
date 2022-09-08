@@ -1,6 +1,8 @@
 package ru.vsu.cs.farsharing.config;
 
 import android.app.Application;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 
 import java.util.UUID;
@@ -11,12 +13,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import ru.vsu.cs.farsharing.model.enums.Role;
 import ru.vsu.cs.farsharing.service.CarService;
 import ru.vsu.cs.farsharing.service.ClientService;
+import ru.vsu.cs.farsharing.service.ContractService;
 import ru.vsu.cs.farsharing.service.LocationService;
 import ru.vsu.cs.farsharing.service.UserService;
 
 public final class FarSharingApp extends Application {
 
-    public final String baseUrl = "http://farsharing-server.herokuapp.com/";
+    public final String BASE_URL = "http://farsharing-server.herokuapp.com/";
+    private final String CHANNEL_ID = "1";
 
     private Retrofit retrofit;
 
@@ -24,9 +28,10 @@ public final class FarSharingApp extends Application {
     private ClientService clientService;
     private LocationService locationService;
     private UserService userService;
+    private ContractService contractService;
 
-    private UUID userUUID;
-    private UUID clientUUID;
+    private UUID userUid;
+    private UUID clientUid;
     private Role role;
 
     private static FarSharingApp instance;
@@ -51,7 +56,7 @@ public final class FarSharingApp extends Application {
         context = getApplicationContext();
 
         retrofit = new Retrofit.Builder()
-                      .baseUrl(baseUrl)
+                      .baseUrl(BASE_URL)
                       .addConverterFactory(GsonConverterFactory.create())
                       .client(new OkHttpClient.Builder().build())
                       .build();
@@ -60,6 +65,19 @@ public final class FarSharingApp extends Application {
         clientService = retrofit.create(ClientService.class);
         locationService = retrofit.create(LocationService.class);
         userService = retrofit.create(UserService.class);
+        contractService = retrofit.create(ContractService.class);
+        createNotificationChannel();
+    }
+    private void createNotificationChannel() {
+        CharSequence name = "Notification Channel";
+        String description = "Notification Channel for FarSharing App";
+        int importance = NotificationManager.IMPORTANCE_DEFAULT;
+        NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+        channel.setDescription(description);
+        // Register the channel with the system; you can't change the importance
+        // or other notification behaviors after this
+        NotificationManager notificationManager = getSystemService(NotificationManager.class);
+        notificationManager.createNotificationChannel(channel);
     }
 
     public Retrofit getRetrofit() {
@@ -82,12 +100,12 @@ public final class FarSharingApp extends Application {
         return userService;
     }
 
-    public UUID getUserUUID() {
-        return userUUID;
+    public UUID getUserUid() {
+        return userUid;
     }
 
-    public void setUserUUID(UUID userUUID) {
-        this.userUUID = userUUID;
+    public void setUserUid(UUID userUid) {
+        this.userUid = userUid;
     }
 
     public Role getRole() {
@@ -98,11 +116,23 @@ public final class FarSharingApp extends Application {
         this.role = role;
     }
 
-    public UUID getClientUUID() {
-        return clientUUID;
+    public UUID getClientUid() {
+        return clientUid;
     }
 
-    public void setClientUUID(UUID clientUUID) {
-        this.clientUUID = clientUUID;
+    public void setClientUid(UUID clientUid) {
+        this.clientUid = clientUid;
+    }
+
+    public ContractService getContractService() {
+        return contractService;
+    }
+
+    public void setContractService(ContractService contractService) {
+        this.contractService = contractService;
+    }
+
+    public String getNotificationChannelId() {
+        return CHANNEL_ID;
     }
 }

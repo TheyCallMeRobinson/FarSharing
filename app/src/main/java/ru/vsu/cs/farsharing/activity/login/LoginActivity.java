@@ -53,18 +53,17 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(@NonNull Call<IAuthResponse> call, @NonNull Response<IAuthResponse> response) {
                 if (response.body() != null) {
-                    FarSharingApp.getInstance().setUserUUID(response.body().getUserUid());
+                    FarSharingApp.getInstance().setUserUid(response.body().getUserUid());
                     if (response.body().getAuthAdminResponse() != null) {
                         FarSharingApp.getInstance().setRole(Role.ADMIN);
                     } else if (response.body().getAuthClientResponse() != null) {
-                        FarSharingApp.getInstance().setClientUUID(response.body().getAuthClientResponse().getUid());
+                        FarSharingApp.getInstance().setClientUid(response.body().getAuthClientResponse().getClientUid());
                         FarSharingApp.getInstance().setRole(Role.CLIENT);
                     }
                     Intent toMainActivity = new Intent(FarSharingApp.getContext(), MainActivity.class);
-                    if (FarSharingApp.getInstance().getUserUUID() != null) {
+                    if (FarSharingApp.getInstance().getUserUid() != null) {
                         startActivity(toMainActivity);
-                    }
-                    else {
+                    } else {
                         Snackbar.make(binding.getRoot(), "Данный пользователь был удален", Snackbar.LENGTH_LONG).show();
                     }
                 } else {
