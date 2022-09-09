@@ -6,4 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".activity.main.AdminMainActivity">
 
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/Text.TextView"
+        android:text="Панель Администратора"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/addCar"
+        style="@style/Button.NoScroll"
+        android:layout_marginTop="140dp"
+        android:text="Добавить авто"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+    <Button
+        android:id="@+id/observeUsers"
+        style="@style/Button.NoScroll"
+        android:layout_marginTop="20dp"
+        android:text="Поиск пользователей"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addCar" />
+
+<!--    <Button-->
+<!--        android:id="@+id/button2"-->
+<!--        style="@style/Button.NoScroll"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:text="Выйти из аккаунта"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/observeUsers" />-->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -86,15 +88,18 @@ public class RegisterActivity extends AppCompatActivity {
                 FarSharingApp.getInstance().getClientService().register(clientRequest).enqueue(new Callback<IAuthResponse>() {
                     @Override
                     public void onResponse(@NonNull Call<IAuthResponse> call, @NonNull Response<IAuthResponse> response) {
-                        assert response.body() != null;
-                        toEmailConfirm.putExtra("clientUid", response.body().getAuthClientResponse().getClientUid());
-                        toEmailConfirm.putExtra("userUid", response.body().getUserUid());
-                        startActivity(toEmailConfirm);
+                        if (response.body() != null) {
+                            toEmailConfirm.putExtra("clientUid", response.body().getAuthClientResponse().getClientUid());
+                            toEmailConfirm.putExtra("userUid", response.body().getUserUid());
+                            startActivity(toEmailConfirm);
+                        } else {
+                            Snackbar.make(binding.getRoot(), "Ваш Email" + emailField.getText() + " уже зарегистрирован, пожалуйста, подтвердите аккаунт с помощью кода", Snackbar.LENGTH_LONG).show();
+                        }
                     }
 
                     @Override
                     public void onFailure(@NonNull Call<IAuthResponse> call, @NonNull Throwable t) {
-                        Toast.makeText(FarSharingApp.getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+                        Snackbar.make(binding.getRoot(), t.getMessage(), Snackbar.LENGTH_SHORT).show();
                     }
                 });
             } else {

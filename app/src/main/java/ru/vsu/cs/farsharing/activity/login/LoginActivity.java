@@ -14,6 +14,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import ru.vsu.cs.farsharing.R;
+import ru.vsu.cs.farsharing.activity.main.AdminMainActivity;
 import ru.vsu.cs.farsharing.activity.main.MainActivity;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
 import ru.vsu.cs.farsharing.databinding.ActivityLoginBinding;
@@ -60,9 +61,12 @@ public class LoginActivity extends AppCompatActivity {
                         FarSharingApp.getInstance().setClientUid(response.body().getAuthClientResponse().getClientUid());
                         FarSharingApp.getInstance().setRole(Role.CLIENT);
                     }
-                    Intent toMainActivity = new Intent(FarSharingApp.getContext(), MainActivity.class);
                     if (FarSharingApp.getInstance().getUserUid() != null) {
-                        startActivity(toMainActivity);
+                        if (FarSharingApp.getInstance().getClientUid() == null) {
+                            startActivity(new Intent(FarSharingApp.getContext(), AdminMainActivity.class));
+                        } else {
+                            startActivity(new Intent(FarSharingApp.getContext(), MainActivity.class));
+                        }
                     } else {
                         Snackbar.make(binding.getRoot(), "Данный пользователь был удален", Snackbar.LENGTH_LONG).show();
                     }

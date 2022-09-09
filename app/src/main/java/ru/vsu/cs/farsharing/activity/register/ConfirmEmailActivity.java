@@ -57,7 +57,7 @@ public class ConfirmEmailActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(@NonNull Call<Boolean> call, @NonNull Throwable t) {
-
+                    t.printStackTrace();
                 }
             });
         });

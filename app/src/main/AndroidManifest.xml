@@ -16,6 +16,9 @@
         android:theme="@style/Theme.NewApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.add_car.AddCarActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.main.AdminMainActivity"
             android:exported="false" />
         <activity
@@ -60,7 +63,7 @@
             android:exported="false" />
         <activity
             android:name=".activity.welcome.WelcomeActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"

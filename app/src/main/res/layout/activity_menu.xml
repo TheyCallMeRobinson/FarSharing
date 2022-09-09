@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/addCar"
         style="@style/Button.NoScroll"
         android:layout_marginTop="140dp"
         android:text="Личный кабинет"
@@ -31,5 +31,5 @@
         android:text="Выйти из аккаунта"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/addCar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
