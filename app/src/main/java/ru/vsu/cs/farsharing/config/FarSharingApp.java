@@ -11,11 +11,11 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import ru.vsu.cs.farsharing.model.enums.Role;
-import ru.vsu.cs.farsharing.service.CarService;
-import ru.vsu.cs.farsharing.service.ClientService;
-import ru.vsu.cs.farsharing.service.ContractService;
-import ru.vsu.cs.farsharing.service.LocationService;
-import ru.vsu.cs.farsharing.service.UserService;
+import ru.vsu.cs.farsharing.service.rest.CarService;
+import ru.vsu.cs.farsharing.service.rest.ClientService;
+import ru.vsu.cs.farsharing.service.rest.ContractService;
+import ru.vsu.cs.farsharing.service.rest.LocationService;
+import ru.vsu.cs.farsharing.service.rest.UserService;
 
 public final class FarSharingApp extends Application {
 

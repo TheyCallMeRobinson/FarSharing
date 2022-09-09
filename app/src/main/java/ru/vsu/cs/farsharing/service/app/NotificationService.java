@@ -1,4 +1,4 @@
-package ru.vsu.cs.farsharing.service;
+package ru.vsu.cs.farsharing.service.app;
 
 import android.app.PendingIntent;
 import android.content.Context;

@@ -21,7 +21,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/registerText"
+                android:id="@+id/addCarText"
                 style="@style/Text.TextView"
                 android:text="@string/register"
                 app:layout_constraintEnd_toEndOf="parent"

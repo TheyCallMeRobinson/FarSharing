@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +21,7 @@ import ru.vsu.cs.farsharing.config.FarSharingApp;
 import ru.vsu.cs.farsharing.databinding.ActivityRegisterBinding;
 import ru.vsu.cs.farsharing.model.request.ClientRequest;
 import ru.vsu.cs.farsharing.model.response.IAuthResponse;
-import ru.vsu.cs.farsharing.service.FieldValidatorService;
+import ru.vsu.cs.farsharing.service.app.FieldValidatorService;
 
 public class RegisterActivity extends AppCompatActivity {
     private ActivityRegisterBinding binding;

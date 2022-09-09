@@ -34,7 +34,7 @@
             app:layout_constraintTop_toBottomOf="@+id/loginText">
 
             <EditText
-                android:id="@+id/firstNameField"
+                android:id="@+id/modelField"
                 style="@style/Text.EditText"
                 android:layout_marginTop="100dp"
                 android:ems="10"
@@ -42,7 +42,7 @@
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/registerText" />
+                app:layout_constraintTop_toBottomOf="@+id/addCarText" />
 
             <EditText
                 android:id="@+id/birthdateField"
@@ -52,10 +52,10 @@
                 android:inputType="date"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/firstNameField" />
+                app:layout_constraintTop_toBottomOf="@+id/modelField" />
 
             <EditText
-                android:id="@+id/licenseNumberField"
+                android:id="@+id/stateNumberField"
                 style="@style/Text.EditText"
                 android:ems="10"
                 android:hint="@string/registerLicenseNumberHint"
@@ -65,24 +65,24 @@
                 app:layout_constraintTop_toBottomOf="@+id/birthdateField" />
 
             <EditText
-                android:id="@+id/emailField"
+                android:id="@+id/bodyTypeField"
                 style="@style/Text.EditText"
                 android:ems="10"
                 android:hint="@string/registerEmailHint"
                 android:inputType="textEmailAddress"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/licenseNumberField" />
+                app:layout_constraintTop_toBottomOf="@+id/stateNumberField" />
 
             <EditText
-                android:id="@+id/registerPasswordField"
+                android:id="@+id/pricePerHourField"
                 style="@style/Text.EditText"
                 android:ems="10"
                 android:hint="@string/registerPasswordHint"
                 android:inputType="textPassword"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/emailField" />
+                app:layout_constraintTop_toBottomOf="@+id/bodyTypeField" />
 
             <Button
                 android:id="@+id/changeAccountButton"

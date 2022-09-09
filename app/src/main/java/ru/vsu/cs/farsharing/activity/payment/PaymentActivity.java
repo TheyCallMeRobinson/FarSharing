@@ -1,40 +1,28 @@
 package ru.vsu.cs.farsharing.activity.payment;
 
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 
 import com.google.android.material.snackbar.Snackbar;
 
-import java.time.ZonedDateTime;
-import java.util.Calendar;
 import java.util.UUID;
 
-import lombok.var;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import ru.vsu.cs.farsharing.R;
 import ru.vsu.cs.farsharing.activity.login.LoginActivity;
 import ru.vsu.cs.farsharing.activity.main.MainActivity;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
 import ru.vsu.cs.farsharing.databinding.ActivityPaymentBinding;
-import ru.vsu.cs.farsharing.model.request.AddContractRequest;
 import ru.vsu.cs.farsharing.model.request.PayRequest;
-import ru.vsu.cs.farsharing.service.FieldValidatorService;
-import ru.vsu.cs.farsharing.service.NotificationService;
+import ru.vsu.cs.farsharing.service.app.FieldValidatorService;
+import ru.vsu.cs.farsharing.service.app.NotificationService;
 
 public class PaymentActivity extends AppCompatActivity {
 
