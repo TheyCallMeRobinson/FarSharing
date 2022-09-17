@@ -12,5 +12,4 @@ public class CarListItem {
     private String brand;
     private String model;
     private String stateNumber;
-
 }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:divider="?android:listDivider"
+    android:showDividers="middle">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/clientListFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            tools:text="Фамилия Имя Отчество"/>
+
+<!--        <TextView-->
+<!--            android:id="@+id/clientListId"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:paddingStart="10dp"-->
+<!--            android:textSize="15sp"-->
+<!--            tools:text="12345-56789-10111-21314" />-->
+
+        <TextView
+            android:id="@+id/clientListEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:textSize="15sp"
+            tools:text="example@test.com"/>
+        <TextView
+            android:id="@+id/clientListLicense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:textSize="15sp"
+            tools:text="Номер водительских прав: 123456789"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/clientListStatus"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        tools:text="Статус">
+    </TextView>
+</LinearLayout>

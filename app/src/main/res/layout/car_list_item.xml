@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="100dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:divider="?android:listDivider"
     android:showDividers="middle"
     android:dividerPadding="2.5dp"
@@ -19,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="10dp"
-            android:text="LADA"
+            tools:text="LADA"
             android:textSize="12pt" />
 
         <TextView
@@ -27,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="10dp"
-            android:text="Priora"
+            tools:text="Priora"
             android:textAlignment="textStart"
             android:textSize="8pt" />
 
@@ -39,7 +40,7 @@
             android:fontFamily="@font/road_numbers_otf"
             android:paddingStart="10dp"
             android:paddingTop="6dp"
-            android:text="A111AA"
+            tools:text="A111AA"
             android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="12pt"

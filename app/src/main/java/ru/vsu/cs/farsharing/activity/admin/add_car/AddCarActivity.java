@@ -1,4 +1,4 @@
-package ru.vsu.cs.farsharing.activity.add_car;
+package ru.vsu.cs.farsharing.activity.admin.add_car;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -86,6 +86,7 @@ public class AddCarActivity extends AppCompatActivity {
             });
         });
     }
+
     private void clearAllFields() {
         brand.setText("");
         model.setText("");

@@ -1,4 +1,4 @@
-package ru.vsu.cs.farsharing.activity.main;
+package ru.vsu.cs.farsharing.activity.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import ru.vsu.cs.farsharing.activity.admin.add_car.AddCarActivity;
+import ru.vsu.cs.farsharing.activity.admin.client_list.ClientListActivity;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
 import ru.vsu.cs.farsharing.databinding.ActivityAdminMainBinding;
 
@@ -32,12 +34,12 @@ public class AdminMainActivity extends AppCompatActivity {
 
     private void setUpListeners() {
         addCar.setOnClickListener(v -> {
-//            Intent toAddCarList = new Intent(FarSharingApp.getContext(), AddCarActivity.class);
-//            startActivity(toAddCarList);
+            Intent toAddCarList = new Intent(FarSharingApp.getContext(), AddCarActivity.class);
+            startActivity(toAddCarList);
         });
         observeUsers.setOnClickListener(v -> {
-//            Intent toUserList = new Intent(FarSharingApp.getContext(), UserListActivity.class);
-//            startActivity(toUserList);
+            Intent toUserList = new Intent(FarSharingApp.getContext(), ClientListActivity.class);
+            startActivity(toUserList);
         });
     }
 }
