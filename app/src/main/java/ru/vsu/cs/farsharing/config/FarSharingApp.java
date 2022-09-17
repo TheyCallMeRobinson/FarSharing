@@ -11,6 +11,7 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import ru.vsu.cs.farsharing.model.enums.Role;
+import ru.vsu.cs.farsharing.service.rest.BugReportService;
 import ru.vsu.cs.farsharing.service.rest.CarService;
 import ru.vsu.cs.farsharing.service.rest.ClientService;
 import ru.vsu.cs.farsharing.service.rest.ContractService;
@@ -29,6 +30,7 @@ public final class FarSharingApp extends Application {
     private LocationService locationService;
     private UserService userService;
     private ContractService contractService;
+    private BugReportService bugReportService;
 
     private UUID userUid;
     private UUID clientUid;
@@ -66,6 +68,7 @@ public final class FarSharingApp extends Application {
         locationService = retrofit.create(LocationService.class);
         userService = retrofit.create(UserService.class);
         contractService = retrofit.create(ContractService.class);
+        bugReportService = retrofit.create(BugReportService.class);
         createNotificationChannel();
     }
     private void createNotificationChannel() {
@@ -98,6 +101,10 @@ public final class FarSharingApp extends Application {
 
     public UserService getUserService() {
         return userService;
+    }
+
+    public BugReportService getBugReportService() {
+        return bugReportService;
     }
 
     public UUID getUserUid() {
@@ -135,4 +142,5 @@ public final class FarSharingApp extends Application {
     public String getNotificationChannelId() {
         return CHANNEL_ID;
     }
+
 }
