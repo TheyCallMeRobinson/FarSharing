@@ -16,7 +16,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import ru.vsu.cs.farsharing.activity.cardetails.CarDetailsActivity;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
 import ru.vsu.cs.farsharing.databinding.ActivityMainBinding;
 import ru.vsu.cs.farsharing.model.entity.CarEntity;

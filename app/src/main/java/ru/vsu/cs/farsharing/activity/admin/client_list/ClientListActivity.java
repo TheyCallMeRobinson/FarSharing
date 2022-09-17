@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -61,6 +62,8 @@ public class ClientListActivity extends AppCompatActivity implements OnClientLis
 
     @Override
     public void onItemClick(int position) {
-        Toast.makeText(FarSharingApp.getContext(), "Item with id: " + clientList.get(position).getUid(), Toast.LENGTH_LONG).show();
+        Intent toClientDetails = new Intent(FarSharingApp.getContext(), ClientDetailsActivity.class);
+        toClientDetails.putExtra("clientUid", clientList.get(position).getUid());
+        startActivity(toClientDetails);
     }
 }

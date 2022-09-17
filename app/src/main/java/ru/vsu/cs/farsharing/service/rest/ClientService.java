@@ -27,6 +27,9 @@ public interface ClientService {
     @PUT("api/client/{client_uid}")
     Call<Void> updateClientData(@Path(value = "client_uid") UUID client_uid, @Body ClientRequest clientUpdateRequest);
 
-    @PUT("api/client/{client_uid}")
+    @PUT("api/client/ban/{client_uid}")
     Call<Void> banClient(@Path(value = "client_uid") UUID client_uid);
+
+    @GET("api/client/{client_uid}/cars")
+    Call<List<UUID>> getBookedCarsUidList(@Path(value = "client_uid") UUID client_uid);
 }

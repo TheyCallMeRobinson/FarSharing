@@ -50,7 +50,7 @@
             android:name=".activity.TextSupportActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.cardetails.CarDetailsActivity"
+            android:name=".activity.main.CarDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".activity.payment.PaymentActivity"

@@ -1,4 +1,4 @@
-package ru.vsu.cs.farsharing.activity.cardetails;
+package ru.vsu.cs.farsharing.activity.main;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +16,6 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.io.IOException;
 import java.time.Instant;
-import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Locale;
 import java.util.UUID;
