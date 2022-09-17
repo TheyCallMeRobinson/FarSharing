@@ -28,6 +28,7 @@ import ru.vsu.cs.farsharing.config.FarSharingApp;
 import ru.vsu.cs.farsharing.databinding.ActivityCarDetailsBinding;
 import ru.vsu.cs.farsharing.model.entity.CarEntity;
 import ru.vsu.cs.farsharing.model.request.AddContractRequest;
+import ru.vsu.cs.farsharing.service.app.GeocoderService;
 
 public class CarDetailsActivity extends AppCompatActivity {
 
@@ -143,7 +144,7 @@ public class CarDetailsActivity extends AppCompatActivity {
                     bodyType.setText(car.getBodyType().getName());
                     color.setText(car.getColor().getName());
                     stateNumber.setText(car.getStateNumber());
-                    address.setText(getStreetFromLocation(car.getLocation().getX(), car.getLocation().getY()));
+                    address.setText(GeocoderService.getStreetFromLocation(car.getLocation().getX(), car.getLocation().getY()));
                     pricePerHour.setText(String.valueOf(car.getPricePerHour()));
                     seekBar.setVisibility(View.VISIBLE);
                     total.setVisibility(View.VISIBLE);
@@ -158,17 +159,5 @@ public class CarDetailsActivity extends AppCompatActivity {
                 Snackbar.make(binding.getRoot(), "Не удалось связаться с сервером", Snackbar.LENGTH_LONG).show();
             }
         });
-    }
-
-    private String getStreetFromLocation(Double x, Double y) {
-        Geocoder geocoder = new Geocoder(getBaseContext(), Locale.getDefault());
-        String fullAddress = "";
-        try {
-            Address address = geocoder.getFromLocation(x, y, 100).get(0);
-            fullAddress = address.getThoroughfare() + ", " + address.getSubThoroughfare() + ", " + address.getLocality();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return fullAddress;
     }
 }

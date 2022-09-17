@@ -25,7 +25,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = SplashScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        ImageView splashScreenImage = binding.SplashScreenImage;
+        ImageView splashScreenImage = binding.splashScreenImage;
         Intent intent = new Intent(this, WelcomeActivity.class);
         var animation = AnimationUtils.loadAnimation(this, R.anim.up_and_shrink);
         splashScreenImage.startAnimation(animation);

@@ -14,6 +14,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.yandex.metrica.YandexMetrica;
 
 import ru.vsu.cs.farsharing.R;
+import ru.vsu.cs.farsharing.activity.MenuActivity;
 import ru.vsu.cs.farsharing.activity.admin.AdminMainActivity;
 import ru.vsu.cs.farsharing.activity.login.LoginActivity;
 import ru.vsu.cs.farsharing.activity.main.MainActivity;
@@ -50,7 +51,7 @@ public class WelcomeActivity extends AppCompatActivity {
         login.setOnClickListener(v -> {
             if (FarSharingApp.getInstance().getRole() != null) {
                 if (FarSharingApp.getInstance().getRole() == Role.CLIENT) {
-                    startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+                    startActivity(new Intent(WelcomeActivity.this, MenuActivity.class));
                 } else {
                     startActivity(new Intent(WelcomeActivity.this, AdminMainActivity.class));
                 }

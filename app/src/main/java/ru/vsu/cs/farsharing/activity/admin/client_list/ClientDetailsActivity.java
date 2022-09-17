@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,7 +12,6 @@ import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.UUID;
 
 import retrofit2.Call;
@@ -22,6 +20,7 @@ import retrofit2.Response;
 import ru.vsu.cs.farsharing.R;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
 import ru.vsu.cs.farsharing.databinding.ActivityClientDetailsBinding;
+import ru.vsu.cs.farsharing.model.entity.CarEntity;
 import ru.vsu.cs.farsharing.model.enums.Status;
 import ru.vsu.cs.farsharing.model.response.ClientDataResponse;
 
@@ -52,9 +51,9 @@ public class ClientDetailsActivity extends AppCompatActivity {
     }
 
     private void getClientCarsInRent() {
-        FarSharingApp.getInstance().getClientService().getBookedCarsUidList(clientUid).enqueue(new Callback<List<UUID>>() {
+        FarSharingApp.getInstance().getClientService().getBookedCarsList(clientUid).enqueue(new Callback<List<CarEntity>>() {
             @Override
-            public void onResponse(@NonNull Call<List<UUID>> call, @NonNull Response<List<UUID>> response) {
+            public void onResponse(@NonNull Call<List<CarEntity>> call, @NonNull Response<List<CarEntity>> response) {
                 if (response.body() != null) {
                     carsInRentCount = response.body().size();
                 } else {
@@ -63,7 +62,7 @@ public class ClientDetailsActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(@NonNull Call<List<UUID>> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<List<CarEntity>> call, @NonNull Throwable t) {
                 t.printStackTrace();
                 Snackbar.make(binding.getRoot(), "Не удалось получить список клиентов", Snackbar.LENGTH_LONG).show();
             }

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import ru.vsu.cs.farsharing.activity.main.MainActivity;
+import ru.vsu.cs.farsharing.activity.main.MyCarsActivity;
 import ru.vsu.cs.farsharing.activity.welcome.WelcomeActivity;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
 import ru.vsu.cs.farsharing.databinding.ActivityMenuBinding;
@@ -50,7 +51,7 @@ public class MenuActivity extends AppCompatActivity {
     private void setUpListeners() {
         account.setOnClickListener(v -> startActivity(new Intent(FarSharingApp.getContext(), MyAccountActivity.class)));
         carList.setOnClickListener(v -> startActivity(new Intent(FarSharingApp.getContext(), MainActivity.class)));
-        myCarsList.setOnClickListener(v -> startActivity(new Intent(FarSharingApp.getContext(), MainActivity.class)));
+        myCarsList.setOnClickListener(v -> startActivity(new Intent(FarSharingApp.getContext(), MyCarsActivity.class)));
         reportBug.setOnClickListener(v -> startActivity(new Intent(FarSharingApp.getContext(), TextSupportActivity.class)));
         logout.setOnClickListener(v ->  {
             DialogInterface.OnClickListener dialogClickListener = (dialog, which) -> {
@@ -59,6 +60,7 @@ public class MenuActivity extends AppCompatActivity {
                         FarSharingApp.getInstance().setClientUid(null);
                         FarSharingApp.getInstance().setUserUid(null);
                         startActivity(new Intent(FarSharingApp.getContext(), WelcomeActivity.class));
+                        finish();
                         break;
                     case DialogInterface.BUTTON_NEGATIVE:
                         break;
@@ -72,5 +74,4 @@ public class MenuActivity extends AppCompatActivity {
                    .show();
         });
     }
-
 }

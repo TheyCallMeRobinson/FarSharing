@@ -16,6 +16,9 @@
         android:theme="@style/Theme.NewApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.main.MyCarsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.admin.client_list.ClientDetailsActivity"
             android:exported="false" />
         <activity
@@ -42,9 +45,6 @@
             android:exported="false" />
         <activity
             android:name=".activity.MyAccountActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.AreYouSureActivity"
             android:exported="false" />
         <activity
             android:name=".activity.TextSupportActivity"

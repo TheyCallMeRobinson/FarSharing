@@ -82,7 +82,6 @@ public class PaymentActivity extends AppCompatActivity {
                     }
                 });
             }
-
         });
     }
 
@@ -90,6 +89,5 @@ public class PaymentActivity extends AppCompatActivity {
         return FieldValidatorService.checkInputLength(cardNumber, 16, "Неправильные данные карты") &&
                FieldValidatorService.checkFieldMatchesRegex(validThru, "(0[1-9]|1[0-2])\\/[0-9]{2}", "Введите дату в формате ММ/ГГ") &&
                FieldValidatorService.checkFieldMatchesRegex(cvv, "[0-9]{3}", "Неправильный CVV/CVC код");
-
     }
 }

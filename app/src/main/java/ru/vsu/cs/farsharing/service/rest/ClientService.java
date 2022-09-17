@@ -9,6 +9,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import ru.vsu.cs.farsharing.model.entity.CarEntity;
 import ru.vsu.cs.farsharing.model.entity.ClientEntity;
 import ru.vsu.cs.farsharing.model.request.ClientRequest;
 import ru.vsu.cs.farsharing.model.response.ClientDataResponse;
@@ -31,5 +32,5 @@ public interface ClientService {
     Call<Void> banClient(@Path(value = "client_uid") UUID client_uid);
 
     @GET("api/client/{client_uid}/cars")
-    Call<List<UUID>> getBookedCarsUidList(@Path(value = "client_uid") UUID client_uid);
+    Call<List<CarEntity>> getBookedCarsList(@Path(value = "client_uid") UUID client_uid);
 }

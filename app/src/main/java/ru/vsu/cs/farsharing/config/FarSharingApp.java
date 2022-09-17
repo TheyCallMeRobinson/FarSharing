@@ -69,6 +69,7 @@ public final class FarSharingApp extends Application {
         userService = retrofit.create(UserService.class);
         contractService = retrofit.create(ContractService.class);
         bugReportService = retrofit.create(BugReportService.class);
+
         createNotificationChannel();
     }
     private void createNotificationChannel() {
