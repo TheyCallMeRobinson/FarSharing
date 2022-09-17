@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activity.MenuActivity">
 
     <TextView
@@ -15,21 +16,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/addCar"
+        android:id="@+id/account"
         style="@style/Button.NoScroll"
-        android:layout_marginTop="140dp"
-        android:text="Личный кабинет"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="20dp"
+        android:text="Личный кабинет" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/carList"
         style="@style/Button.NoScroll"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Список автомобилей" />
+
+    <Button
+        android:id="@+id/myCarsList"
+        style="@style/Button.NoScroll"
+        android:layout_marginBottom="20dp"
+        android:text="Мои текущие авто" />
+
+    <Button
+        android:id="@+id/reportBug"
+        style="@style/Button.NoScroll"
+        android:text="Сообщить об ошибке"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/logout"
+        style="@style/Button.NoScroll"
         android:text="Выйти из аккаунта"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addCar" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginBottom="20dp"/>
+</LinearLayout>
