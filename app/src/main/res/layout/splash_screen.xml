@@ -10,7 +10,7 @@
 
 
     <ImageView
-        android:id="@+id/SplashScreenImage"
+        android:id="@+id/splashScreenImage"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:src="@drawable/welcome_to_farsharing"
