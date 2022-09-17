@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ru.vsu.cs.farsharing" >
+    package="ru.vsu.cs.farsharing">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,7 +14,10 @@
         android:roundIcon="@drawable/farsharing_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewApp"
-        android:usesCleartextTraffic="true" >
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activity.admin.client_list.ClientDetailsActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.admin.client_list.ClientListActivity"
             android:exported="false" />
@@ -27,7 +30,7 @@
         <activity
             android:name=".SplashScreen"
             android:exported="true"
-            android:theme="@style/SplashTheme" >
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

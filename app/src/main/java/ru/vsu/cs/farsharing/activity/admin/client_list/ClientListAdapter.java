@@ -84,6 +84,7 @@ public class ClientListAdapter extends RecyclerView.Adapter<ClientListAdapter.Vi
             this.licenseNumber = itemView.findViewById(R.id.clientListLicense);
             this.status = itemView.findViewById(R.id.clientListStatus);
             this.onItemListener = onItemListener;
+            itemView.setOnClickListener(this);
         }
 
         @Override
