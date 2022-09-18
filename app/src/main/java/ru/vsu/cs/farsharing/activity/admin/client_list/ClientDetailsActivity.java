@@ -115,6 +115,7 @@ public class ClientDetailsActivity extends AppCompatActivity {
                     if (response.code() == 200) {
                         Toast.makeText(FarSharingApp.getContext(), "Статус пользователя изменён", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(FarSharingApp.getContext(), ClientListActivity.class));
+                        finish();
                     }
                 }
 

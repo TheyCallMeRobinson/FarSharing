@@ -56,14 +56,13 @@ public class MenuActivity extends AppCompatActivity {
         myCarsList.setOnClickListener(v -> startActivity(new Intent(FarSharingApp.getContext(), MyCarsActivity.class)));
         reportBug.setOnClickListener(v -> startActivity(new Intent(FarSharingApp.getContext(), TextSupportActivity.class)));
         logout.setOnClickListener(v ->  {
-            Snackbar dialog = Snackbar
+            Snackbar
                 .make(binding.getRoot(), "Вы уверены, что хотите выйти?", Snackbar.LENGTH_INDEFINITE)
                 .setAction("Да", view -> {
                     FarSharingApp.getInstance().clearUserSessionData();
                     startActivity(new Intent(FarSharingApp.getContext(), WelcomeActivity.class));
                     finish();
-                });
-            dialog.show();
+                }).show();
         });
     }
 }
