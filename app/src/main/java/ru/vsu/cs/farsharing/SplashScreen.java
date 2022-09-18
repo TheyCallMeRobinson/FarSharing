@@ -3,7 +3,6 @@ package ru.vsu.cs.farsharing;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -27,7 +26,7 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(binding.getRoot());
         ImageView splashScreenImage = binding.splashScreenImage;
         Intent intent = new Intent(this, WelcomeActivity.class);
-        var animation = AnimationUtils.loadAnimation(this, R.anim.up_and_shrink);
+        var animation = AnimationUtils.loadAnimation(this, R.anim.shrink_and_opacity_transition);
         splashScreenImage.startAnimation(animation);
         splashScreenImage.getAnimation().setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -36,6 +35,7 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 startActivity(intent);
+                finish();
             }
 
             @Override
