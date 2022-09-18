@@ -22,6 +22,16 @@ public class FieldValidatorService {
         return first.getText().toString().equals(second.getText().toString());
     }
 
+    public static boolean checkFieldsMatch(EditText first, EditText second, String error) {
+        if (first.getText().toString().equals(second.getText().toString())) {
+            return true;
+        } else {
+            first.setError(error);
+            second.setError(error);
+            return false;
+        }
+    }
+
     public static void showWrongInputFields(List<EditText> wrongInputFields) {
         for(EditText field : wrongInputFields) {
             field.setError("Неверное значение");

@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -33,4 +34,7 @@ public interface ClientService {
 
     @GET("api/client/{client_uid}/cars")
     Call<List<CarEntity>> getBookedCarsList(@Path(value = "client_uid") UUID client_uid);
+
+    @DELETE("api/client/delete/{client_uid}")
+    Call<Void> deleteClient(@Path(value = "client_uid") UUID client_uid);
 }

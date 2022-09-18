@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import ru.vsu.cs.farsharing.activity.main.MainActivity;
 import ru.vsu.cs.farsharing.activity.main.MyCarsActivity;
 import ru.vsu.cs.farsharing.activity.welcome.WelcomeActivity;
@@ -54,24 +56,15 @@ public class MenuActivity extends AppCompatActivity {
         myCarsList.setOnClickListener(v -> startActivity(new Intent(FarSharingApp.getContext(), MyCarsActivity.class)));
         reportBug.setOnClickListener(v -> startActivity(new Intent(FarSharingApp.getContext(), TextSupportActivity.class)));
         logout.setOnClickListener(v ->  {
-            DialogInterface.OnClickListener dialogClickListener = (dialog, which) -> {
-                switch (which) {
-                    case DialogInterface.BUTTON_POSITIVE:
-                        FarSharingApp.getInstance().setClientUid(null);
-                        FarSharingApp.getInstance().setUserUid(null);
-                        startActivity(new Intent(FarSharingApp.getContext(), WelcomeActivity.class));
-                        finish();
-                        break;
-                    case DialogInterface.BUTTON_NEGATIVE:
-                        break;
-                }
-            };
-
-            AlertDialog.Builder builder = new AlertDialog.Builder(FarSharingApp.getContext());
-            builder.setMessage("Вы уверены, что хотите выйти?")
-                   .setPositiveButton("Да", dialogClickListener)
-                   .setNegativeButton("Нет", dialogClickListener)
-                   .show();
+            Snackbar dialog = Snackbar
+                .make(binding.getRoot(), "Вы уверены, что хотите выйти?", Snackbar.LENGTH_INDEFINITE)
+                .setAction("Да", view -> {
+                    FarSharingApp.getInstance().setClientUid(null);
+                    FarSharingApp.getInstance().setUserUid(null);
+                    startActivity(new Intent(FarSharingApp.getContext(), WelcomeActivity.class));
+                    finish();
+                });
+            dialog.show();
         });
     }
 }
