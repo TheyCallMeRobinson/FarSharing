@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.admin.AdminMainActivity">
+
+    <TextView
+        style="@style/Text.TextView"
+        android:text="Панель Администратора" />
+
+    <Button
+        android:id="@+id/addCar"
+        style="@style/Button.NoScroll"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="0dp"
+        android:text="Добавить авто" />
+
+    <Button
+        android:id="@+id/observeUsers"
+        style="@style/Button.NoScroll"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="0dp"
+        android:text="Поиск пользователей"/>
+
+    <Button
+        android:id="@+id/logout"
+        style="@style/Button.NoScroll"
+        android:layout_marginTop="20dp"
+        android:text="Выйти из аккаунта"/>
+
+
+</LinearLayout>

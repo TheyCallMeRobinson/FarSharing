@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.support.TextSupportActivity">
+
+    <TextView
+        android:id="@+id/loginTextView"
+        style="@style/Text.TextView"
+        android:text="Сообщить об ошибке"
+        android:layout_marginTop="40dp"/>
+
+    <EditText
+        android:id="@+id/bugReportTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginTop="20dp"
+        android:hint="Тема"
+        android:background="@drawable/edit_text_area" />
+
+    <EditText
+        android:id="@+id/bugReportField"
+        android:layout_width="wrap_content"
+        android:layout_height="413dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/edit_text_area"
+        android:gravity="top|start"
+        android:hint="Пожалуйста, опишите найденную ошибку, по возможности укажите условия её возникновения."
+        android:inputType="textMultiLine"
+        android:lines="6"
+        android:overScrollMode="always"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:scrollHorizontally="false"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/bugReportButton"
+        style="@style/Button"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="16dp"
+        android:text="Отправить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</LinearLayout>

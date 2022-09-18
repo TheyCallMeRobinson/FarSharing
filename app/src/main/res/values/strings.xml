@@ -1,12 +1,45 @@
 <resources>
     <string name="app_name">FarSharing</string>
-    <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+    <string name="welcome">Добро пожаловать в FarSharing</string>
+    <string name="login">Вход</string>
+    <string name="register">Регистрация</string>
+    <string name="emailFieldHint">Email</string>
+    <string name="next">Далее</string>
+    <string name="passwordFieldHint">Пароль</string>
+    <string name="registerNameHint">ФИО</string>
+    <string name="registerBirthdateHint">Дата рождения</string>
+    <string name="registerLicenseNumberHint">Номер водительских прав</string>
+    <string name="registerEmailHint">Email</string>
+    <string name="registerPasswordHint">Пароль</string>
+    <string name="confirmEmail">Подтверждение почты</string>
+    <string name="code">Код</string>
+    <string name="submit">Подтвердить</string>
+    <string name="paymentRequisites">Реквизиты для оплаты</string>
+    <string name="cardNumber">Номер карты</string>
+    <string name="validThru">Действует до</string>
+    <string name="cvv_cvc">CVV/CVC</string>
+    <string name="chosenAuto">Выбранный Вами авто:</string>
+    <string name="brand">Бренд</string>
+    <string name="model">Модель</string>
+    <string name="parkingAddress">Адрес парковки</string>
+    <string name="costPerHour">Цена в час, р.</string>
+    <string name="rentForHours">Аренда на</string>
+    <string name="carColor">Цвет</string>
+    <string name="bodyType">Тип кузова</string>
+    <string name="helloWorld">Привет, Мир!</string>
+    <string name="cars">Автомобили</string>
+    <string name="metrika_api_key">d7adeb85-3d8d-4bc2-ac69-60f906038aa0</string>
+    <string name="title_activity_nav_drawer">NavDrawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

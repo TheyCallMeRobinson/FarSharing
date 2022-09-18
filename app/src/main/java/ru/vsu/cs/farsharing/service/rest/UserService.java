@@ -1,0 +1,23 @@
+package ru.vsu.cs.farsharing.service.rest;
+
+import java.util.UUID;
+
+import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
+import ru.vsu.cs.farsharing.model.request.UserRequest;
+import ru.vsu.cs.farsharing.model.response.IAuthResponse;
+
+public interface UserService {
+    @POST("api/user/auth")
+    Call<IAuthResponse> auth(@Body UserRequest userRequest);
+
+    @GET("api/user/activate/{uid}/{code}")
+    Call<Boolean> activateAccount(@Path(value = "uid") UUID uid, @Path(value = "code") Integer code);
+
+    @PUT("api/user/{uid}")
+    Call<Void> updateAccount(@Path(value = "uid") UUID uid, UserRequest user);
+}

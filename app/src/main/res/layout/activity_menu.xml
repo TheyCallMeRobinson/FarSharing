@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.menu.MenuActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/Text.TextView"
+        android:text="Меню"
+        android:layout_marginBottom="100dp"/>
+
+    <Button
+        android:id="@+id/account"
+        style="@style/Button.NoScroll"
+        android:layout_marginBottom="20dp"
+        android:text="Личный кабинет" />
+
+    <Button
+        android:id="@+id/carList"
+        style="@style/Button.NoScroll"
+        android:layout_marginBottom="20dp"
+        android:text="Список автомобилей" />
+
+    <Button
+        android:id="@+id/myCarsList"
+        style="@style/Button.NoScroll"
+        android:layout_marginBottom="20dp"
+        android:text="Мои текущие авто" />
+
+    <Button
+        android:id="@+id/reportBug"
+        style="@style/Button.NoScroll"
+        android:text="Сообщить об ошибке"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/logout"
+        style="@style/Button.NoScroll"
+        android:text="Выйти из аккаунта"
+        android:layout_marginBottom="20dp"/>
+</LinearLayout>

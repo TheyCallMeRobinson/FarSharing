@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/welcome_to_farsharing_no_bgrnd</item>
+    </style>
+
+    <style name="Button">
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:textColor">@color/textButton</item>
+        <item name="android:fontFamily">@font/montserrat_subrayada_bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Button.NoScroll">
+        <item name="android:layout_marginBottom">55dp</item>
+        <item name="android:layout_marginStart">33dp</item>
+        <item name="android:layout_marginEnd">33dp</item>
+    </style>
+
+    <style name="Button.Scroll">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginBottom">55dp</item>
+        <item name="android:layout_marginStart">33dp</item>
+        <item name="android:layout_marginEnd">33dp</item>
+    </style>
+
+    <style name="Text">
+        <item name="android:fontFamily">@font/telex</item>
+    </style>
+
+    <style name="Text.Shadow">
+        <item name="android:textColor">@color/textShadow</item>
+    </style>
+
+    <style name="Text.TextView">
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_marginTop">88dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginStart">33dp</item>
+        <item name="android:layout_marginEnd">33dp</item>
+        <item name="android:ems">10</item>
+        <item name="layout_constraintHorizontal_bias">0.0</item>
+    </style>
+
+    <style name="Text.EditText">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">33dp</item>
+        <item name="android:layout_marginEnd">33dp</item>
+    </style>
+
+    <style name="Text.OutputTextView">
+        <item name="android:layout_marginTop">50dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">33dp</item>
+        <item name="android:layout_marginEnd">33dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Text.HintTextView">
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">0dp</item>
+    </style>
+
+    <style name="CarListItem">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+</resources>

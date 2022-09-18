@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.main.CarDetailsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".activity.main.CarDetailsActivity">
+
+        <TextView
+            android:id="@+id/stateNumber"
+            style="@style/Text.OutputTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:textSize="12pt"
+            android:fontFamily="@font/road_numbers_otf"
+            android:minWidth="80dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/pricePerHour"
+            app:layout_constraintTop_toBottomOf="@+id/address" />
+
+        <TextView
+            android:id="@+id/textView5"
+            style="@style/Text.HintTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Гос. Номер"
+            app:layout_constraintBottom_toTopOf="@+id/stateNumber"
+            app:layout_constraintStart_toStartOf="@+id/stateNumber" />
+
+        <TextView
+            android:id="@+id/chosenAutoHeaderText"
+            style="@style/Text.TextView"
+            android:layout_marginTop="40dp"
+            android:text="@string/chosenAuto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/brand"
+            style="@style/Text.OutputTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chosenAutoHeaderText" />
+
+        <TextView
+            android:id="@+id/model"
+            style="@style/Text.OutputTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/brand" />
+
+        <TextView
+            android:id="@+id/bodyType"
+            style="@style/Text.OutputTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/model" />
+
+        <TextView
+            android:id="@+id/color"
+            style="@style/Text.OutputTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bodyType" />
+
+        <TextView
+            android:id="@+id/address"
+            style="@style/Text.OutputTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/color" />
+
+        <TextView
+            android:id="@+id/pricePerHour"
+            style="@style/Text.OutputTextView"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="32dp"
+            android:minWidth="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/address" />
+
+        <TextView
+            android:id="@+id/total"
+            style="@style/Text.OutputTextView"
+            android:layout_width="wrap_content"
+            android:minWidth="200dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+        <TextView
+            android:id="@+id/textView16"
+            style="@style/Text.HintTextView"
+            android:text="@string/brand"
+            app:layout_constraintBottom_toTopOf="@+id/brand"
+            app:layout_constraintStart_toStartOf="@+id/brand" />
+
+        <TextView
+            android:id="@+id/textView17"
+            style="@style/Text.HintTextView"
+            android:text="@string/model"
+            app:layout_constraintBottom_toTopOf="@+id/model"
+            app:layout_constraintStart_toStartOf="@+id/model" />
+
+        <TextView
+            android:id="@+id/textView18"
+            style="@style/Text.HintTextView"
+            android:text="@string/bodyType"
+            app:layout_constraintBottom_toTopOf="@+id/bodyType"
+            app:layout_constraintStart_toStartOf="@+id/bodyType" />
+
+        <TextView
+            android:id="@+id/textView19"
+            style="@style/Text.HintTextView"
+            android:text="@string/carColor"
+            app:layout_constraintBottom_toTopOf="@+id/color"
+            app:layout_constraintStart_toStartOf="@+id/color" />
+
+        <TextView
+            android:id="@+id/textView20"
+            style="@style/Text.HintTextView"
+            android:text="@string/parkingAddress"
+            app:layout_constraintBottom_toTopOf="@+id/address"
+            app:layout_constraintStart_toStartOf="@+id/address" />
+
+        <TextView
+            android:id="@+id/textView21"
+            style="@style/Text.HintTextView"
+            android:text="@string/costPerHour"
+            app:layout_constraintBottom_toTopOf="@+id/pricePerHour"
+            app:layout_constraintStart_toStartOf="@+id/pricePerHour" />
+
+        <TextView
+            android:id="@+id/rentForHoursTextView"
+            style="@style/Text.HintTextView"
+            android:text="@string/rentForHours"
+            app:layout_constraintBottom_toTopOf="@+id/rentForHours"
+            app:layout_constraintStart_toStartOf="@+id/rentForHours" />
+
+        <TextView
+            android:id="@+id/rentForHours"
+            style="@style/Text.OutputTextView"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="33dp"
+            android:minWidth="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mapView" />
+
+        <Button
+            android:id="@+id/confirmChoice"
+            style="@style/Button.Scroll"
+            android:text="@string/submit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total"
+            app:layout_constraintVertical_bias="0.426"
+            tools:ignore="TextContrastCheck" />
+
+        <com.yandex.mapkit.mapview.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="33dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pricePerHour"/>
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="33dp"
+            android:layout_marginEnd="33dp"
+            android:progress="3"
+            android:max="24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rentForHours" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

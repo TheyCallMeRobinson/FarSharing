@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.main.CarDetailsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".activity.main.CarDetailsActivity">
+
+        <TextView
+            android:id="@+id/carsInRent"
+            style="@style/Text.OutputTextView"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="100dp"
+            android:minWidth="80dp"
+            android:textAlignment="textStart"
+            android:textSize="10pt"
+            app:layout_constraintStart_toEndOf="@+id/accidentsCount"
+            app:layout_constraintTop_toBottomOf="@+id/address" />
+
+        <TextView
+            style="@style/Text.HintTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Автомобилей в аренде"
+            app:layout_constraintBottom_toTopOf="@+id/carsInRent"
+            app:layout_constraintStart_toStartOf="@+id/carsInRent" />
+
+        <TextView
+            android:id="@+id/chosenAutoHeaderText"
+            style="@style/Text.TextView"
+            android:layout_marginTop="40dp"
+            android:text="Данные о пользователе"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fullName"
+            style="@style/Text.OutputTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chosenAutoHeaderText" />
+
+        <TextView
+            android:id="@+id/clientUid"
+            style="@style/Text.OutputTextView"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fullName" />
+
+        <TextView
+            android:id="@+id/phoneNumber"
+            style="@style/Text.OutputTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clientUid" />
+
+        <TextView
+            android:id="@+id/address"
+            style="@style/Text.OutputTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
+
+        <TextView
+            android:id="@+id/accidentsCount"
+            style="@style/Text.OutputTextView"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="48dp"
+            android:minWidth="80dp"
+            android:textAlignment="textStart"
+            android:textSize="10pt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/address" />
+
+        <TextView
+            style="@style/Text.HintTextView"
+            android:text="Полное имя"
+            app:layout_constraintBottom_toTopOf="@+id/fullName"
+            app:layout_constraintStart_toStartOf="@+id/fullName" />
+
+        <TextView
+            style="@style/Text.HintTextView"
+            android:text="Идентификатор"
+            app:layout_constraintBottom_toTopOf="@+id/clientUid"
+            app:layout_constraintStart_toStartOf="@+id/clientUid" />
+
+        <TextView
+            style="@style/Text.HintTextView"
+            android:text="Номер телефона"
+            app:layout_constraintBottom_toTopOf="@+id/phoneNumber"
+            app:layout_constraintStart_toStartOf="@+id/phoneNumber" />
+
+        <TextView
+            style="@style/Text.HintTextView"
+            android:text="Адрес"
+            app:layout_constraintBottom_toTopOf="@+id/address"
+            app:layout_constraintStart_toStartOf="@+id/address" />
+
+        <TextView
+            style="@style/Text.HintTextView"
+            android:text="Количество аварий"
+            app:layout_constraintBottom_toTopOf="@+id/accidentsCount"
+            app:layout_constraintStart_toStartOf="@+id/accidentsCount" />
+
+        <Button
+            android:id="@+id/banUser"
+            style="@style/Button.Scroll"
+            tools:text="Забанить"
+            tools:background="@color/danger"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/carsInRent"
+            tools:ignore="TextContrastCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
