@@ -26,3 +26,5 @@ Simple carsharing app
 [Swagger](http://farsharing-server.herokuapp.com/swagger-ui/index.html)
 
 [Reserve link to API documentation on SwaggerHub](https://app.swaggerhub.com/apis/StudentCSF/farsharing_open-api_definition/v2)
+
+[FarSharing apk file link to Google Drive](https://drive.google.com/drive/folders/1KNZSg2EVVR0GkUpIdiC37BRJmWJlvI8g?usp=sharing)
