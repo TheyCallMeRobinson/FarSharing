@@ -2,6 +2,7 @@ package ru.vsu.cs.farsharing.activity.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import ru.vsu.cs.farsharing.activity.login.LoginActivity;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
 import ru.vsu.cs.farsharing.databinding.ActivityMainBinding;
 import ru.vsu.cs.farsharing.model.entity.CarEntity;
@@ -61,8 +63,16 @@ public class MainActivity extends AppCompatActivity implements OnCarListItemList
 
     @Override
     public void onItemClick(int position) {
-        Intent toDetailedCarData = new Intent(this, CarDetailsActivity.class);
-        toDetailedCarData.putExtra("carUid", carsList.get(position).getUid());
-        startActivity(toDetailedCarData);
+        if (FarSharingApp.getInstance().getClientUid() != null) {
+            Intent toDetailedCarData = new Intent(this, CarDetailsActivity.class);
+            toDetailedCarData.putExtra("carUid", carsList.get(position).getUid());
+            startActivity(toDetailedCarData);
+        } else {
+            Snackbar.make(binding.getRoot(), "Подробная информация доступна только авторизованным пользователям", Snackbar.LENGTH_INDEFINITE)
+                    .setAction("Войти в аккаунт", v -> {
+                        startActivity(new Intent(FarSharingApp.getContext(), LoginActivity.class));
+                        finish();
+                    }).show();
+        }
     }
 }

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -75,33 +76,36 @@ public class CarDetailsActivity extends AppCompatActivity {
 
     private void setUpListeners() {
         confirmChoice.setOnClickListener(v -> {
-            AddContractRequest request = new AddContractRequest(
-                    FarSharingApp.getInstance().getClientUid(),
-                    car.getUid(),
-                    Instant.now().toString(),
-                    Instant.now().plus(seekBar.getProgress(), ChronoUnit.HOURS).toString()
-            );
-            FarSharingApp.getInstance().getContractService().createNewContract(request).enqueue(new Callback<UUID>() {
-                @Override
-                public void onResponse(@NonNull Call<UUID> call, @NonNull Response<UUID> response) {
-                    if (response.body() != null) {
-                        Intent toPaymentActivity = new Intent(CarDetailsActivity.this, PaymentActivity.class);
-                        UUID contractUid = response.body();
-                        toPaymentActivity.putExtra("contractUid", contractUid);
-                        toPaymentActivity.putExtra("carUid", car.getUid());
-                        toPaymentActivity.putExtra("hours", seekBar.getProgress());
-                        startActivity(toPaymentActivity);
-                    } else {
-                        Snackbar.make(binding.getRoot(), "Не удалось создать контракт", Snackbar.LENGTH_LONG).show();
+            if (!car.getIsAvailable()) {
+                Snackbar.make(binding.getRoot(), "Этот автомобил уже кем-то арендован.\n Пожалуйста, выберите другой", Snackbar.LENGTH_LONG).show();
+            } else {
+                AddContractRequest request = new AddContractRequest(
+                        FarSharingApp.getInstance().getClientUid(),
+                        car.getUid(),
+                        Instant.now().toString(),
+                        Instant.now().plus(seekBar.getProgress(), ChronoUnit.HOURS).toString()
+                );
+                FarSharingApp.getInstance().getContractService().createNewContract(request).enqueue(new Callback<UUID>() {
+                    @Override
+                    public void onResponse(@NonNull Call<UUID> call, @NonNull Response<UUID> response) {
+                        if (response.body() != null) {
+                            Intent toPaymentActivity = new Intent(CarDetailsActivity.this, PaymentActivity.class);
+                            UUID contractUid = response.body();
+                            toPaymentActivity.putExtra("contractUid", contractUid);
+                            toPaymentActivity.putExtra("carUid", car.getUid());
+                            toPaymentActivity.putExtra("hours", seekBar.getProgress());
+                            startActivity(toPaymentActivity);
+                        } else {
+                            Snackbar.make(binding.getRoot(), "Не удалось создать контракт", Snackbar.LENGTH_LONG).show();
+                        }
                     }
-                }
 
-                @Override
-                public void onFailure(@NonNull Call<UUID> call, @NonNull Throwable t) {
-                    t.printStackTrace();
-                }
-            });
-
+                    @Override
+                    public void onFailure(@NonNull Call<UUID> call, @NonNull Throwable t) {
+                        t.printStackTrace();
+                    }
+                });
+            }
         });
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -149,6 +153,10 @@ public class CarDetailsActivity extends AppCompatActivity {
                     seekBar.setVisibility(View.VISIBLE);
                     total.setVisibility(View.VISIBLE);
                     rentForHours.setVisibility(View.VISIBLE);
+                    if (!car.getIsAvailable()) {
+                        confirmChoice.setActivated(false);
+                        confirmChoice.setBackgroundColor(Color.GRAY);
+                    }
                 } else {
                     Snackbar.make(binding.getRoot(), "Не удалось связаться с сервером", Snackbar.LENGTH_LONG).show();
                 }
