@@ -91,6 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
                             toEmailConfirm.putExtra("clientUid", response.body().getAuthClientResponse().getClientUid());
                             toEmailConfirm.putExtra("userUid", response.body().getUserUid());
                             startActivity(toEmailConfirm);
+                            finish();
                         } else {
                             Snackbar.make(binding.getRoot(), "Ваш Email" + emailField.getText() + " уже зарегистрирован, пожалуйста, подтвердите аккаунт с помощью кода", Snackbar.LENGTH_LONG).show();
                         }

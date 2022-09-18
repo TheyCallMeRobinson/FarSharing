@@ -50,11 +50,11 @@ public class ConfirmEmailActivity extends AppCompatActivity {
                     if (response.body() != null && response.body()) {
                         Intent toLoginActivity = new Intent(FarSharingApp.getContext(), LoginActivity.class);
                         startActivity(toLoginActivity);
+                        finish();
                     } else {
                         confirmCodeText.setError("Неверный код");
                     }
                 }
-
                 @Override
                 public void onFailure(@NonNull Call<Boolean> call, @NonNull Throwable t) {
                     t.printStackTrace();

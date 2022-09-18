@@ -50,6 +50,7 @@ public class TextSupportActivity extends AppCompatActivity {
                     if (response.code() == 200) {
                         Toast.makeText(FarSharingApp.getContext(), "Ваше сообщение успешно отправлено, спасибо за обратную связь", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(FarSharingApp.getContext(), MenuActivity.class));
+                        finish();
                     } else {
                         Snackbar.make(binding.getRoot(), "Что-то пошло не так, ваше сообщение не доставлено", Snackbar.LENGTH_LONG).show();
                     }

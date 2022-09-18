@@ -72,6 +72,7 @@ public class PaymentActivity extends AppCompatActivity {
                             NotificationService.sendPushNotificationWithIntent(FarSharingApp.getContext(), textTitle, textContent, new Intent(FarSharingApp.getContext(), LoginActivity.class));
                             Intent toMain = new Intent(FarSharingApp.getContext(), MainActivity.class);
                             startActivity(toMain);
+                            finish();
                         } else {
                             Snackbar.make(binding.getRoot(), "Не удалось связаться с сервером", Snackbar.LENGTH_LONG).show();
                         }
