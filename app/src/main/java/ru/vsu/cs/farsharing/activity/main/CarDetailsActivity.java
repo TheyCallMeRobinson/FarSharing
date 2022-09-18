@@ -14,11 +14,13 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.yandex.mapkit.Animation;
+import com.yandex.mapkit.geometry.Point;
+import com.yandex.mapkit.map.CameraPosition;
+import com.yandex.mapkit.mapview.MapView;
 
-import java.io.IOException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.Locale;
 import java.util.UUID;
 
 import retrofit2.Call;
@@ -34,6 +36,7 @@ import ru.vsu.cs.farsharing.service.app.GeocoderService;
 public class CarDetailsActivity extends AppCompatActivity {
 
     private ActivityCarDetailsBinding binding;
+
     private Button confirmChoice;
     private TextView brand;
     private TextView model;
@@ -45,7 +48,10 @@ public class CarDetailsActivity extends AppCompatActivity {
     private TextView rentForHours;
     private TextView total;
     private SeekBar seekBar;
+    private MapView map;
+
     private CarEntity car;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +75,7 @@ public class CarDetailsActivity extends AppCompatActivity {
         confirmChoice = binding.confirmChoice;
         total = binding.total;
         seekBar = binding.seekBar;
+        map = binding.mapView;
         seekBar.setVisibility(View.INVISIBLE);
         total.setVisibility(View.INVISIBLE);
         rentForHours.setVisibility(View.INVISIBLE);
@@ -149,6 +156,11 @@ public class CarDetailsActivity extends AppCompatActivity {
                     seekBar.setVisibility(View.VISIBLE);
                     total.setVisibility(View.VISIBLE);
                     rentForHours.setVisibility(View.VISIBLE);
+                    map.getMap().move(
+                            new CameraPosition(new Point(car.getLocation().getX(), car.getLocation().getY()), 11.0f, 0.0f, 0.0f),
+                            new Animation(Animation.Type.SMOOTH, 0),
+                            null
+                    );
                 } else {
                     Snackbar.make(binding.getRoot(), "Не удалось связаться с сервером", Snackbar.LENGTH_LONG).show();
                 }

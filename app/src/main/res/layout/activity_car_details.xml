@@ -150,10 +150,10 @@
             android:id="@+id/rentForHours"
             style="@style/Text.OutputTextView"
             android:layout_width="wrap_content"
-            android:minWidth="80dp"
             android:layout_marginStart="33dp"
+            android:minWidth="80dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pricePerHour" />
+            app:layout_constraintTop_toBottomOf="@+id/mapView" />
 
         <Button
             android:id="@+id/confirmChoice"
@@ -166,6 +166,17 @@
             app:layout_constraintVertical_bias="0.426"
             tools:ignore="TextContrastCheck" />
 
+        <com.yandex.mapkit.mapview.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="33dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pricePerHour"/>
         <SeekBar
             android:id="@+id/seekBar"
             android:layout_width="match_parent"

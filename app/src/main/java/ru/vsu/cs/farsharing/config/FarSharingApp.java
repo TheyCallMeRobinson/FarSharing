@@ -5,6 +5,8 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 
+import com.yandex.mapkit.MapKitFactory;
+
 import java.util.UUID;
 
 import okhttp3.OkHttpClient;
@@ -22,6 +24,7 @@ public final class FarSharingApp extends Application {
 
     public final String BASE_URL = "http://farsharing-server.herokuapp.com/";
     private final String CHANNEL_ID = "1";
+    private final String YANDEX_MAPKIT_API_KEY = "6e55d9ed-18b1-4138-a69a-9adf1f7347e0";
 
     private Retrofit retrofit;
 
@@ -70,18 +73,23 @@ public final class FarSharingApp extends Application {
         contractService = retrofit.create(ContractService.class);
         bugReportService = retrofit.create(BugReportService.class);
 
+        initializeMapKit();
         createNotificationChannel();
     }
+
     private void createNotificationChannel() {
         CharSequence name = "Notification Channel";
         String description = "Notification Channel for FarSharing App";
         int importance = NotificationManager.IMPORTANCE_DEFAULT;
         NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
         channel.setDescription(description);
-        // Register the channel with the system; you can't change the importance
-        // or other notification behaviors after this
         NotificationManager notificationManager = getSystemService(NotificationManager.class);
         notificationManager.createNotificationChannel(channel);
+    }
+
+    private void initializeMapKit() {
+        MapKitFactory.setApiKey(YANDEX_MAPKIT_API_KEY);
+        MapKitFactory.initialize(context);
     }
 
     public Retrofit getRetrofit() {

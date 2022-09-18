@@ -55,7 +55,7 @@ public class MenuActivity extends AppCompatActivity {
         reportBug.setOnClickListener(v -> startActivity(new Intent(FarSharingApp.getContext(), TextSupportActivity.class)));
         logout.setOnClickListener(v ->  {
             Snackbar
-                .make(binding.getRoot(), "Вы уверены, что хотите выйти?", Snackbar.LENGTH_INDEFINITE)
+                .make(binding.getRoot(), "Вы уверены, что хотите выйти?", Snackbar.LENGTH_LONG)
                 .setAction("Да", view -> {
                     FarSharingApp.getInstance().clearUserSessionData();
                     startActivity(new Intent(FarSharingApp.getContext(), WelcomeActivity.class));

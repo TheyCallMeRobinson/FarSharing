@@ -9,9 +9,9 @@
     <application
         android:name=".config.FarSharingApp"
         android:allowBackup="true"
-        android:icon="@drawable/farsharing_icon"
+        android:icon="@drawable/farsharing_logo_with_car"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/farsharing_icon"
+        android:roundIcon="@drawable/farsharing_logo_with_car"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewApp"
         android:usesCleartextTraffic="true">
