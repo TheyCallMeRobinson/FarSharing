@@ -88,18 +88,31 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(@NonNull Call<IAuthResponse> call, @NonNull Response<IAuthResponse> response) {
                         if (response.body() != null) {
-                            toEmailConfirm.putExtra("clientUid", response.body().getAuthClientResponse().getClientUid());
-                            toEmailConfirm.putExtra("userUid", response.body().getUserUid());
-                            startActivity(toEmailConfirm);
-                            finish();
+                            if (response.body().getAuthClientResponse() == null && response.body().getAuthAdminResponse() == null) {
+                                Snackbar
+                                        .make(binding.getRoot(), "Ваш Email" + emailField.getText() + " уже зарегистрирован, пожалуйста, подтвердите почту с помощью кода", Snackbar.LENGTH_LONG)
+                                        .setAction("Перейти", v -> {
+                                            toEmailConfirm.putExtra("userUid", response.body().getUserUid());
+                                            startActivity(toEmailConfirm);
+                                            finish();
+                                        })
+                                        .show();
+                            } else {
+                                toEmailConfirm.putExtra("userUid", response.body().getUserUid());
+                                startActivity(toEmailConfirm);
+                                finish();
+                            }
                         } else {
-                            Snackbar.make(binding.getRoot(), "Ваш Email" + emailField.getText() + " уже зарегистрирован, пожалуйста, подтвердите аккаунт с помощью кода", Snackbar.LENGTH_LONG).show();
+                            Snackbar.make(binding.getRoot(), "Номер водительских прав или почта уже существует", Snackbar.LENGTH_LONG).show();
+                            licenseField.setError("Номер водительских прав должен быть уникальным");
+                            emailField.setError("Почта должна быть уникальной");
                         }
                     }
 
                     @Override
                     public void onFailure(@NonNull Call<IAuthResponse> call, @NonNull Throwable t) {
-                        Snackbar.make(binding.getRoot(), t.getMessage(), Snackbar.LENGTH_SHORT).show();
+                        t.printStackTrace();
+                        Snackbar.make(binding.getRoot(), "Не удалось связаться с сервером", Snackbar.LENGTH_SHORT).show();
                     }
                 });
             }
