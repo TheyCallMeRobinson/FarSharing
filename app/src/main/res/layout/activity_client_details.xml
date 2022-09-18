@@ -18,7 +18,8 @@
             android:layout_height="25dp"
             android:layout_marginStart="100dp"
             android:minWidth="80dp"
-            android:textSize="12pt"
+            android:textAlignment="textStart"
+            android:textSize="10pt"
             app:layout_constraintStart_toEndOf="@+id/accidentsCount"
             app:layout_constraintTop_toBottomOf="@+id/address" />
 
@@ -73,7 +74,10 @@
             style="@style/Text.OutputTextView"
             android:layout_width="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="48dp"
             android:minWidth="80dp"
+            android:textAlignment="textStart"
+            android:textSize="10pt"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/address" />
 
