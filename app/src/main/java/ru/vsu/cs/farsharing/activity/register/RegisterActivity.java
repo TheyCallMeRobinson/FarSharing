@@ -59,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
         if (!FieldValidatorService.checkFieldMatchesRegex(emailField, "^.+@.+$")) {
             wrongInputs.add(emailField);
         }
-        if (!FieldValidatorService.checkFieldsMatch(passwordField, passwordRepeatField)) {
+        if (!FieldValidatorService.checkFieldsMatch(passwordField, passwordRepeatField, "Пароли не совпадают")) {
             wrongInputs.add(passwordField);
             wrongInputs.add(passwordRepeatField);
         }
@@ -102,8 +102,6 @@ public class RegisterActivity extends AppCompatActivity {
                         Snackbar.make(binding.getRoot(), t.getMessage(), Snackbar.LENGTH_SHORT).show();
                     }
                 });
-            } else {
-                FieldValidatorService.showWrongInputFields(wrongFields);
             }
         });
     }

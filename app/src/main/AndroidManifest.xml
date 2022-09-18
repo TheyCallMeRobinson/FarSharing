@@ -41,13 +41,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.MenuActivity"
+            android:name=".activity.menu.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MyAccountActivity"
+            android:name=".activity.account.MyAccountActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.TextSupportActivity"
+            android:name=".activity.support.TextSupportActivity"
             android:exported="false" />
         <activity
             android:name=".activity.main.CarDetailsActivity"

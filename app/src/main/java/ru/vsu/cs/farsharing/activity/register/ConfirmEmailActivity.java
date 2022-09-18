@@ -44,7 +44,8 @@ public class ConfirmEmailActivity extends AppCompatActivity {
 
     private void setUpListeners() {
         confirmEmailNextButton.setOnClickListener(v -> {
-            FarSharingApp.getInstance().getUserService().activateAccount(userUid, Integer.getInteger(confirmCodeText.getText().toString())).enqueue(new Callback<Boolean>() {
+            Integer code = Integer.getInteger(confirmCodeText.getText().toString());
+            FarSharingApp.getInstance().getUserService().activateAccount(userUid, code).enqueue(new Callback<Boolean>() {
                 @Override
                 public void onResponse(@NonNull Call<Boolean> call, @NonNull Response<Boolean> response) {
                     if (response.body() != null && response.body()) {

@@ -2,23 +2,14 @@ package ru.vsu.cs.farsharing.activity.welcome;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 
-import com.google.android.material.snackbar.Snackbar;
-import com.yandex.metrica.YandexMetrica;
-
-import ru.vsu.cs.farsharing.R;
-import ru.vsu.cs.farsharing.activity.MenuActivity;
+import ru.vsu.cs.farsharing.activity.menu.MenuActivity;
 import ru.vsu.cs.farsharing.activity.admin.AdminMainActivity;
 import ru.vsu.cs.farsharing.activity.login.LoginActivity;
-import ru.vsu.cs.farsharing.activity.main.MainActivity;
-import ru.vsu.cs.farsharing.activity.payment.PaymentActivity;
 import ru.vsu.cs.farsharing.activity.register.RegisterActivity;
 import ru.vsu.cs.farsharing.config.FarSharingApp;
 import ru.vsu.cs.farsharing.databinding.ActivityWelcomeBinding;

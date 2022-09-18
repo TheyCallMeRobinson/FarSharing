@@ -1,4 +1,4 @@
-package ru.vsu.cs.farsharing.activity;
+package ru.vsu.cs.farsharing.activity.menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.widget.Button;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import ru.vsu.cs.farsharing.activity.account.MyAccountActivity;
+import ru.vsu.cs.farsharing.activity.support.TextSupportActivity;
 import ru.vsu.cs.farsharing.activity.main.MainActivity;
 import ru.vsu.cs.farsharing.activity.main.MyCarsActivity;
 import ru.vsu.cs.farsharing.activity.welcome.WelcomeActivity;
