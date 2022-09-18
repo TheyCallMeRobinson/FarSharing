@@ -2,7 +2,7 @@
 <resources>
 
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowSplashScreenAnimatedIcon">@drawable/welcome_to_farsharing</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/welcome_to_farsharing_no_bgrnd</item>
     </style>
 
     <style name="Button">
