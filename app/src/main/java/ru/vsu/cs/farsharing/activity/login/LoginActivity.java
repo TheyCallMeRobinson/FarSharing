@@ -26,7 +26,9 @@ import ru.vsu.cs.farsharing.model.response.IAuthResponse;
 public class LoginActivity extends AppCompatActivity {
 
     private Button loginNextButton;
-    private EditText loginEmailField, loginPasswordField;
+    private Button continueWithoutAuth;
+    private EditText loginEmailField;
+    private EditText loginPasswordField;
     private ActivityLoginBinding binding;
 
     @Override
@@ -41,12 +43,17 @@ public class LoginActivity extends AppCompatActivity {
     private void setUpViews() {
         loginNextButton = binding.loginNextButton;
         loginEmailField = binding.loginEmailField;
+        continueWithoutAuth = binding.continueWithoutAuth;
         loginPasswordField = binding.loginPasswordField;
     }
 
     private void setUpListeners() {
         loginNextButton.setOnClickListener(v -> {
             logIn(loginEmailField.getText().toString(), loginPasswordField.getText().toString());
+        });
+        continueWithoutAuth.setOnClickListener(v -> {
+            startActivity(new Intent(FarSharingApp.getContext(), MenuActivity.class));
+            finish();
         });
     }
 

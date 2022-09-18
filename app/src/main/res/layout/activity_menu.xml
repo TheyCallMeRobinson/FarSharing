@@ -11,14 +11,11 @@
         android:id="@+id/textView3"
         style="@style/Text.TextView"
         android:text="Меню"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="100dp"/>
 
     <Button
         android:id="@+id/account"
         style="@style/Button.NoScroll"
-        android:layout_marginTop="100dp"
         android:layout_marginBottom="20dp"
         android:text="Личный кабинет" />
 

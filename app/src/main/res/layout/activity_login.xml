@@ -9,7 +9,17 @@
     <Button
         android:id="@+id/loginNextButton"
         style="@style/Button.NoScroll"
+        android:layout_marginBottom="20dp"
         android:text="@string/next"
+        app:layout_constraintBottom_toTopOf="@+id/continueWithoutAuth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/continueWithoutAuth"
+        style="@style/Button.NoScroll"
+        android:layout_marginBottom="40dp"
+        android:text="Продолжить без аккаунта"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

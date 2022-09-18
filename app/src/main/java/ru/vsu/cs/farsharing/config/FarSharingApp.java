@@ -144,4 +144,9 @@ public final class FarSharingApp extends Application {
         return CHANNEL_ID;
     }
 
+    public void clearUserSessionData() {
+        role = null;
+        clientUid = null;
+        userUid = null;
+    }
 }

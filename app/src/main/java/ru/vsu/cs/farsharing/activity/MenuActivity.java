@@ -59,8 +59,7 @@ public class MenuActivity extends AppCompatActivity {
             Snackbar dialog = Snackbar
                 .make(binding.getRoot(), "Вы уверены, что хотите выйти?", Snackbar.LENGTH_INDEFINITE)
                 .setAction("Да", view -> {
-                    FarSharingApp.getInstance().setClientUid(null);
-                    FarSharingApp.getInstance().setUserUid(null);
+                    FarSharingApp.getInstance().clearUserSessionData();
                     startActivity(new Intent(FarSharingApp.getContext(), WelcomeActivity.class));
                     finish();
                 });

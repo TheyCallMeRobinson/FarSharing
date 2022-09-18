@@ -138,8 +138,7 @@ public class MyAccountActivity extends Activity {
                         @Override
                         public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
                             if (response.code() == 200) {
-                                FarSharingApp.getInstance().setClientUid(null);
-                                FarSharingApp.getInstance().setUserUid(null);
+                                FarSharingApp.getInstance().clearUserSessionData();
                                 Toast.makeText(FarSharingApp.getContext(), "Ваш аккаунт был успешно удален", Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(FarSharingApp.getContext(), WelcomeActivity.class));
                                 finish();
