@@ -64,10 +64,14 @@ public class MainActivity extends AppCompatActivity implements OnCarListItemList
     @Override
     public void onItemClick(int position) {
         if (FarSharingApp.getInstance().getClientUid() != null) {
-            Intent toDetailedCarData = new Intent(this, CarDetailsActivity.class);
-            toDetailedCarData.putExtra("carUid", carsList.get(position).getUid());
-            startActivity(toDetailedCarData);
-        } else {
+            if (carsList.get(position).getIsAvailable()) {
+                Intent toDetailedCarData = new Intent(this, CarDetailsActivity.class);
+                toDetailedCarData.putExtra("carUid", carsList.get(position).getUid());
+                startActivity(toDetailedCarData);
+            } else {
+                Snackbar.make(binding.getRoot(), "Этот автомобил уже кем-то арендован.\nПожалуйста, выберите другой", Snackbar.LENGTH_LONG).show();
+            }
+        } else if (FarSharingApp.getInstance().getClientUid() == null) {
             Snackbar.make(binding.getRoot(), "Подробная информация доступна только авторизованным пользователям", Snackbar.LENGTH_INDEFINITE)
                     .setAction("Войти в аккаунт", v -> {
                         startActivity(new Intent(FarSharingApp.getContext(), LoginActivity.class));
