@@ -6,6 +6,8 @@ import android.app.NotificationManager;
 import android.content.Context;
 
 import com.yandex.mapkit.MapKitFactory;
+import com.yandex.metrica.YandexMetrica;
+import com.yandex.metrica.YandexMetricaConfig;
 
 import java.util.UUID;
 
@@ -25,7 +27,7 @@ public final class FarSharingApp extends Application {
     public final String BASE_URL = "http://farsharing-server.herokuapp.com/";
     private final String CHANNEL_ID = "1";
     private final String YANDEX_MAPKIT_API_KEY = "6e55d9ed-18b1-4138-a69a-9adf1f7347e0";
-
+    private final String YANDEX_METRICA_API_KEY = "a5de2afd-e244-4fa8-a273-058ce06ab463";
     private Retrofit retrofit;
 
     private CarService carService;
@@ -74,6 +76,7 @@ public final class FarSharingApp extends Application {
         bugReportService = retrofit.create(BugReportService.class);
 
         initializeMapKit();
+        initializeYandexMetrica();
         createNotificationChannel();
     }
 
@@ -89,7 +92,13 @@ public final class FarSharingApp extends Application {
 
     private void initializeMapKit() {
         MapKitFactory.setApiKey(YANDEX_MAPKIT_API_KEY);
-        MapKitFactory.initialize(context);
+        //MapKitFactory.initialize(getApplicationContext());
+    }
+
+    private void initializeYandexMetrica() {
+        YandexMetricaConfig config = YandexMetricaConfig.newConfigBuilder(YANDEX_METRICA_API_KEY).build();
+        YandexMetrica.activate(getContext(), config);
+        YandexMetrica.enableActivityAutoTracking(this);
     }
 
     public Retrofit getRetrofit() {

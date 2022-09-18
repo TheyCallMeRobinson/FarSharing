@@ -35,8 +35,6 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityWelcomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-//        YandexMetrica.activate(this.getApplicationContext(), getString(R.string.metrika_api_key));
-//        YandexMetrica.enableActivityAutoTracking(FarSharingApp.getInstance());
         setUpViews();
         setUpListeners();
     }
