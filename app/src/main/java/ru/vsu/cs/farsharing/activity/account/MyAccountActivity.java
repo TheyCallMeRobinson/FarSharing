@@ -1,4 +1,4 @@
-package ru.vsu.cs.farsharing.activity;
+package ru.vsu.cs.farsharing.activity.account;
 
 import androidx.annotation.NonNull;
 
